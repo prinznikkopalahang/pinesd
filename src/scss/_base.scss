@@ -1,0 +1,36 @@
+// Base Container with responsiveness rule applied
+.container{
+  width: $lg;
+  margin: 0 auto;
+  @media (min-width: calc($lg + 1)) {
+    width: $lg;
+  }
+  @media (min-width: calc($md + 1)) {
+    width: $md;
+  }
+  @media (min-width: calc($sm + 1)) {
+    width: $sm;
+  }
+  @media (min-width: $xs) and (max-width: $lg){
+    width: 90%;
+  }
+}
+
+.row{
+  display: flex;
+  @media(max-width: $sm){
+    display: block;
+  }
+  .clm{
+    width: 50%;
+    @media(max-width: $sm){
+      width: 100%;
+      min-height: 200px;
+    }
+    &.flex-end{
+      display: flex;
+      align-items: flex-end;
+      justify-content: right;
+    }
+  }
+}

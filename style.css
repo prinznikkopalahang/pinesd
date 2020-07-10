@@ -1,0 +1,680 @@
+@charset "UTF-8";
+/*
+Theme Name: PineSD
+Theme URI: https://pinesd.com/
+Author: Prinz Nikko Palahang
+Author URI: https://webforest.solutions/
+Description: A clean theme for PineSD website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: SASS, clean
+*/
+/* -----------------------------------------
+	Table of Contents
+--------------------------------------------
+
+.. 01. Reset
+.. 02. Variables
+.. 03. Fonts
+.. 04. Base
+.. 05. Header
+*/
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/**
+ * reset browser default styling
+ */
+@import url("//hello.myfonts.net/count/3bdb3d");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+::-webkit-scrollbar-track-piece:start {
+	background: transparent url("images/backgrounds/scrollbar.png") repeat-y !important;
+}
+
+::-webkit-scrollbar-track-piece:end {
+	background: transparent url("images/backgrounds/scrollbar.png") repeat-y !important;
+}
+
+input {
+	-webkit-appearance: none !important;
+	border-radius: 0;
+}
+
+/**
+ * set $vars
+ */
+/*
+* container_class
+*/
+/**
+ * @license
+ * MyFonts Webfont Build ID 3922749, 2020-07-06T21:09:10-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: HelveticaNeueLTPro-Lt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-45-light-189172/
+ *
+ * Webfont: HelveticaNeueLTPro-LtIt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/46-light-italic/
+ *
+ * Webfont: HelveticaNeueLTPro-Roman by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-55-roman/
+ *
+ * Webfont: HelveticaNeueLTPro-It by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-56-italic/
+ *
+ * Webfont: HelveticaNeueLTPro-Bd by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-75-bold/
+ *
+ * Webfont: HelveticaNeueLTPro-BdIt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-76-bold-italic/
+ *
+ *
+ * Webfonts copyright: Copyright &amp;#x00A9; 2014 Monotype Imaging Inc. All rights reserved.
+ *
+ * © 2020 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@font-face {
+	font-family: 'HelveticaNeueLTPro-Lt';
+	src: url("fonts/HelveticaNeueLTPro-Lt/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-Lt/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTPro-It';
+	src: url("fonts/HelveticaNeueLTPro-It/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-It/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTPro-Roman';
+	src: url("fonts/HelveticaNeueLTPro-Roman/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-Roman/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTPro-Bd';
+	src: url("fonts/HelveticaNeueLTPro-Bd/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-Bd/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTPro-LtIt';
+	src: url("fonts/HelveticaNeueLTPro-LtIt/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-LtIt/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTPro-BdIt';
+	src: url("fonts/HelveticaNeueLTPro-BdIt/font.woff2") format("woff2"), url("fonts/HelveticaNeueLTPro-BdIt/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: Campton;
+	src: url("fonts/campton.otf");
+}
+
+* {
+	font-family: "HelveticaNeueLTPro-Lt";
+}
+
+h1, h2, h3 {
+	font-family: "Campton";
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+@media (min-width: calc($lg + 1)) {
+	.container {
+		width: 1200px;
+	}
+}
+
+@media (min-width: calc($md + 1)) {
+	.container {
+		width: 992px;
+	}
+}
+
+@media (min-width: calc($sm + 1)) {
+	.container {
+		width: 768px;
+	}
+}
+
+@media (min-width: 300px) and (max-width: 1200px) {
+	.container {
+		width: 90%;
+	}
+}
+
+.row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	.row {
+		display: block;
+	}
+}
+
+.row .clm {
+	width: 50%;
+}
+
+@media (max-width: 768px) {
+	.row .clm {
+		width: 100%;
+		min-height: 200px;
+	}
+}
+
+.row .clm.flex-end {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	-webkit-box-pack: right;
+	-ms-flex-pack: right;
+	justify-content: right;
+}
+
+header {
+	background: #000;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+header .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+}
+
+header .logo svg {
+	width: 51px;
+}
+
+header nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: calc(100% - 51px);
+}
+
+@media (max-width: 768px) {
+	header nav.desktop {
+		display: none;
+	}
+}
+
+header nav ul {
+	list-style: none;
+}
+
+header nav ul li {
+	float: left;
+	height: 94px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+}
+
+header nav ul li.current-menu-item:before {
+	content: "";
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 11px;
+	background: #FFF200;
+}
+
+header nav ul li a {
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 0px 20px;
+	padding-bottom: 0px;
+	-webkit-transition: padding-bottom ease-in-out 0.8s;
+	transition: padding-bottom ease-in-out 0.8s;
+}
+
+header nav ul li a:hover {
+	padding-bottom: 20px;
+}
+
+.mobile-nav-toggle {
+	display: none;
+	width: 24px;
+	height: 24px;
+	-ms-flex-item-align: center;
+	align-self: center;
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.mobile-nav-toggle {
+		display: block;
+	}
+}
+
+.mobile-nav-toggle span {
+	width: 100%;
+	display: block;
+	height: 4px;
+	background: #fff;
+	position: absolute;
+}
+
+.mobile-nav-toggle span:nth-child(1) {
+	top: 0px;
+}
+
+.mobile-nav-toggle span:nth-child(2) {
+	top: 10px;
+}
+
+.mobile-nav-toggle span:nth-child(3) {
+	top: 20px;
+}
+
+.mobile-nav {
+	position: fixed;
+	width: 77vw;
+	height: 100vh;
+	background: #FFF200;
+	z-index: 1000;
+	top: 0;
+	right: -77vw;
+	-webkit-transition: right ease-in-out 0.3s;
+	transition: right ease-in-out 0.3s;
+	padding: 30px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+@media (min-width: 768px) {
+	.mobile-nav {
+		display: none;
+	}
+}
+
+.mobile-nav.open {
+	right: 0;
+}
+
+@media (min-width: 768px) {
+	.mobile-nav.open {
+		display: none;
+	}
+}
+
+.mobile-nav .mobile-nav-toggle {
+	right: 30px;
+	-ms-flex-item-align: baseline;
+	align-self: baseline;
+}
+
+.mobile-nav .mobile-nav-toggle span {
+	background: #000;
+}
+
+.mobile-nav .mobile-nav-toggle span:nth-child(1) {
+	top: 10px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.mobile-nav .mobile-nav-toggle span:nth-child(2) {
+	display: none;
+}
+
+.mobile-nav .mobile-nav-toggle span:nth-child(3) {
+	top: 10px;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.mobile-nav nav ul li {
+	padding-left: 0px;
+	-webkit-transition: padding-left ease-in-out 1s;
+	transition: padding-left ease-in-out 1s;
+}
+
+.mobile-nav nav ul li:hover {
+	padding-left: 20px;
+}
+
+.mobile-nav nav ul li.current-menu-item {
+	position: relative;
+}
+
+.mobile-nav nav ul li.current-menu-item::before {
+	content: "";
+	width: 11px;
+	height: 100%;
+	position: absolute;
+	left: -30px;
+	background: #fff;
+}
+
+.mobile-nav nav ul li a {
+	color: #000;
+	font-size: 36px;
+	font-family: "HelveticaNeueLTPro-Bd";
+	text-decoration: none;
+	line-height: 70px;
+}
+
+footer {
+	background: #000;
+	color: #fff;
+	padding: 100px 0px;
+	margin-top: 100px;
+}
+
+footer .copy {
+	width: 600px;
+}
+
+@media (max-width: 768px) {
+	footer .copy {
+		width: 100%;
+	}
+}
+
+footer .copy h3 {
+	font-size: 30px;
+	margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+	footer .copy h3 {
+		font-size: 26px;
+	}
+}
+
+footer .copy p {
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+	footer .copy p {
+		font-size: 20px;
+	}
+}
+
+footer .contact-info .item {
+	width: 304px;
+	height: 68px;
+	border: 1px solid #FFF200;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: start;
+	padding: 0px 30px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 18px;
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+
+footer .contact-info .item b, footer .contact-info .item span {
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+footer .contact-info .item b {
+	color: #FFF200;
+	padding-right: 10px;
+}
+
+footer .newsletter {
+	width: 304px;
+	margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+	footer .newsletter {
+		width: 100%;
+	}
+}
+
+footer .newsletter p {
+	font-size: 15px;
+	line-height: 19px;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+	footer .newsletter p {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+footer .newsletter .form-group {
+	height: 49px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+footer .newsletter .form-group input.field {
+	height: 100%;
+	width: 80%;
+	border: none;
+	padding: 10px 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0px;
+	font-size: 14px;
+	outline: none;
+}
+
+@media (max-width: 768px) {
+	footer .newsletter .form-group input.field {
+		width: 85%;
+	}
+}
+
+footer .newsletter .form-group input.field::-webkit-input-placeholder {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #000;
+	letter-spacing: 1px;
+	opacity: 1;
+}
+
+footer .newsletter .form-group input.field::-moz-placeholder {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #000;
+	letter-spacing: 1px;
+	opacity: 1;
+}
+
+footer .newsletter .form-group input.field:-ms-input-placeholder {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #000;
+	letter-spacing: 1px;
+	opacity: 1;
+}
+
+footer .newsletter .form-group input.field::-ms-input-placeholder {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #000;
+	letter-spacing: 1px;
+	opacity: 1;
+}
+
+footer .newsletter .form-group input.field::placeholder {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeueLTPro-Bd";
+	color: #000;
+	letter-spacing: 1px;
+	opacity: 1;
+}
+
+footer .newsletter .form-group button {
+	width: 20%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: none;
+	background: #FFF200;
+	font-size: 15px;
+	margin: 0px;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	footer .newsletter .form-group button {
+		width: 15%;
+	}
+}
+
+footer .address {
+	font-size: 15px;
+	line-height: 19px;
+}
+
+footer .address span {
+	display: block;
+	text-align: right;
+}
+
+footer .secondary {
+	border-top: 1px solid #333;
+	margin-top: 50px;
+	padding-top: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+footer .secondary svg {
+	width: 60px;
+}
+
+footer .secondary a, footer .secondary span {
+	-ms-flex-item-align: end;
+	align-self: end;
+}
+
+footer .secondary a.copyright, footer .secondary span.copyright {
+	font-size: 12px;
+	color: #333;
+	font-family: "HelveticaNeueLTPro-Bd";
+	width: 271px;
+	display: block;
+	margin-left: 20px;
+}
+
+footer .secondary .icon {
+	display: block;
+	width: 44px;
+	height: 44px;
+	background: #333;
+	border-radius: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 33px;
+	padding: 5px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+}

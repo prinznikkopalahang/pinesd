@@ -1,0 +1,28 @@
+/*
+Theme Name: PineSD
+Theme URI: https://pinesd.com/
+Author: Prinz Nikko Palahang
+Author URI: https://webforest.solutions/
+Description: A clean theme for PineSD website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: SASS, clean
+*/
+/* -----------------------------------------
+	Table of Contents
+--------------------------------------------
+
+.. 01. Reset
+.. 02. Variables
+.. 03. Fonts
+.. 04. Base
+.. 05. Header
+*/
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import 'src/scss/_reset';
+@import 'src/scss/_variables';
+@import 'src/scss/_fonts';
+@import 'src/scss/_base';
+@import 'src/scss/_header';
+@import 'src/scss/_footer';

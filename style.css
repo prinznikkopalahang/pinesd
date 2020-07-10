@@ -219,9 +219,9 @@ h1, h2, h3 {
 	-webkit-box-align: end;
 	-ms-flex-align: end;
 	align-items: flex-end;
-	-webkit-box-pack: end;
-	-ms-flex-pack: end;
-	justify-content: flex-end;
+	-webkit-box-pack: right;
+	-ms-flex-pack: right;
+	justify-content: right;
 }
 
 header {
@@ -352,9 +352,9 @@ header nav ul li a:hover {
 	padding: 30px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -629,6 +629,8 @@ footer .secondary {
 	border-top: 1px solid #333;
 	margin-top: 50px;
 	padding-top: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: end;
 	-ms-flex-align: end;
@@ -636,13 +638,6 @@ footer .secondary {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
-	display: -webkit-box;
-	/* OLD - iOS 6-, Safari 3.1-6 */
-	/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;
-	/* TWEENER - IE 10 */
-	display: -webkit-flex;
-	/* NEW - Chrome */
 }
 
 footer .secondary svg {
@@ -652,7 +647,6 @@ footer .secondary svg {
 footer .secondary a, footer .secondary span {
 	-ms-flex-item-align: end;
 	align-self: end;
-	text-decoration: none;
 }
 
 footer .secondary a.copyright, footer .secondary span.copyright {

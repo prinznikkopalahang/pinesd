@@ -18,6 +18,10 @@ Tags: SASS, clean
 .. 03. Fonts
 .. 04. Base
 .. 05. Header
+.. 06. Footer
+.. 07. Banner
+.. 08. Sections
+.. 08. Buttons
 */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import 'src/scss/_reset';
@@ -26,3 +30,6 @@ Tags: SASS, clean
 @import 'src/scss/_base';
 @import 'src/scss/_header';
 @import 'src/scss/_footer';
+@import 'src/scss/_banner';
+@import 'src/scss/_section';
+@import 'src/scss/_buttons';

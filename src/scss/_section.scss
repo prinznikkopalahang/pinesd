@@ -1,0 +1,305 @@
+/* -----------------------------------------
+	Sections & Custom Elements Styling
+--------------------------------------------
+*/
+
+section{
+  &.intro{
+    padding: 150px 0px;
+    @media(max-width: $sm){
+      padding: 100px 0px;
+    }
+    .container{
+        display: flex;
+        @media(max-width: $sm){
+          display: block;
+        }
+        .col{
+          //width: 20%;
+          &.content{
+            width: 626px;
+            @media(max-width: $sm){
+              width: 100%;
+            }
+            h2{
+              font-family: "HelveticaNeueLTPro-Bd";
+              font-size: 24px;
+              line-height: 29px;
+              @media(max-width: $sm){
+                font-size: 30px;
+                line-height: 36px;
+              }
+            }
+            p{
+              font-size: 18px;
+              line-height: 30px;
+              margin-top: 10px;
+              @media(max-width: $sm){
+                  font-size: 20px;
+                  line-height: 30px;
+              }
+            }
+          }
+          &.label{
+            display: flex;
+            padding-top: 10px;
+            @media(max-width: $sm){
+              display: block;
+            }
+            span{
+              font-size: 12px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              @media(max-width: $sm){
+                display: block;
+                font-size: 16px;
+              }
+              &.hr{
+                width: 250px;
+                height: 1px;
+                border-top: 1px solid $pinesdSecondary;
+                margin: 4px 20px;
+                @media(max-width: $sm){
+                  height: 70px;
+                  width: 1px;
+                  border: none;
+                  border-left: 1px solid $pinesdSecondary;
+                  margin: 20px 4px;
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  &.content{
+    padding: 150px 0px;
+    h3{
+      font-size: 30px;
+    }
+    p{
+      &.copy{
+        &.big{
+          width: 900px;
+          font-size: 48px;
+          line-height: 62px;
+          letter-spacing: -1px;
+          margin: 100px auto 0;
+          @media(max-width: $sm){
+            width: 100%;
+            font-size: 36px;
+            line-height: 42px;
+            margin-top: 50px;
+          }
+          b{
+            font-family: "HelveticaNeueLTPro-Bd";
+          }
+        }
+      }
+    }
+    &.clients{
+      position: relative;
+      padding: 0px;
+      overflow: -moz-scrollbars-none; /* Firefox */
+      -ms-overflow-style: none; /* IE */
+      @media(max-width: $sm){
+        overflow-x: scroll;
+        margin: 100px 0px;
+      }
+      &::-webkit-scrollbar { width: 0 !important; }
+      .overlay{
+        background: rgba($pinesdSecondary,0.05);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        @media(max-width: $sm){
+          width: 1260px;
+        }
+      }
+      .container{
+        display: flex;
+        padding: 150px 0px;
+        margin: 150px auto;
+        @media(max-width: $sm){
+          display: block;
+          overflow: auto;
+          width: 1260px;
+          margin: 0px;
+          padding: 100px 0px;
+        }
+        span{
+          display: block;
+          width: 174px;
+          height: 180px;
+          background-size: contain !important;
+          @media(max-width: $sm){
+            float: left;
+          }
+          &.dsw{
+            background: url('assets/logos/dsw.png');
+          }
+          &.intel{
+            background: url('assets/logos/intel.png');
+          }
+          &.mahindra{
+            background: url('assets/logos/mahindra.png');
+          }
+          &.mars-wrigley{
+            background: url('assets/logos/mars-wrigley.png');
+          }
+          &.scjohnson{
+            background: url('assets/logos/scjohnson.png');
+          }
+          &.tyson{
+            background: url('assets/logos/tyson.png');
+          }
+          &.zipline{
+            background: url('assets/logos/zipline.png');
+          }
+        }
+      }
+    }
+    &.approach{
+      padding-top: 0px;
+      @media(max-width: $sm){
+        padding: 0px;
+      }
+      p{
+        font-size: 18px;
+        line-height: 30px;
+        width: 621px;
+        margin-top: 30px;
+        @media(max-width: $sm){
+          width: 100%;
+          font-size: 20px;
+        }
+      }
+      h3{
+        @media(max-width: $sm){
+          font-size: 28px;
+        }
+      }
+      span{
+        &.approach-diagram{
+          display: block;
+          width: 800px;
+          height: 444px;
+          background: url('assets/approach.png');
+          background-size: cover;
+          margin: 50px 0px 100px;
+          @media(max-width: $sm){
+            width: 100%;
+            background: url('assets/approach-mobile.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 340px;
+            background-position: center;
+          }
+        }
+      }
+      .items{
+        display: flex;
+        justify-content: center;
+        @media(max-width: $sm){
+          display: block;
+        }
+        .item{
+          width: 270px;
+          margin: 0px 20px;
+          @media(max-width: $sm){
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0px 0px 30px;
+          }
+          h4{
+            font-family: "HelveticaNeueLTPro-Bd";
+            font-size: 24px;
+            line-height: 30px;
+            width: 70%;
+            @media(max-width: $sm){
+              font-size: 30px;
+              width: 100%;
+            }
+          }
+          p{
+            width: 100%;
+            font-size: 15px;
+            margin-top: 15px;
+            @media(max-width: $sm){
+              font-size: 20px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.highlight{
+    background: $pinesdPrimary;
+    @media(max-width: $sm){
+        padding: 100px 0px;
+    }
+  }
+  &.pine-sense{
+    overflow: auto;
+    @media(max-width: $sm){
+        padding: 50px 0px;
+    }
+    .post{
+      width: 626px;
+      height: 352px;
+      background-size: contain !important;
+      display: flex;
+      align-items: flex-end;
+      @media(max-width: $sm){
+          width: 100%;
+          height: 210px;
+      }
+      span{
+        &.title{
+          background: rgba($pinesdSecondary ,0.4);
+          display: block;
+          width: 100%;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          padding: 0px 20px;
+          box-sizing: border-box;
+          font-size: 24px;
+          color: #FFF;
+          font-family: "HelveticaNeueLTPro-Bd";
+          @media(max-width: $sm){
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  &.pine-labs{
+    padding-top: 0px;
+    overflow: auto;
+    .container{
+      .col{
+        &.content{
+          h2{
+            font-size: 110px;
+            line-height: 90px;
+            color: $pinesdPrimary;
+            font-family: "Campton";
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            @media(max-width: $sm){
+                font-size: 65px;
+                line-height: 57px;
+                word-wrap:break-word;
+            }
+          }
+          button, a{
+            width: 281px;
+          }
+        }
+      }
+    }
+  }
+}

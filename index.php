@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="pinesd" class="content-area">
-    <main id="main" class="aloi-main" role="main">
+    <main id="main" class="pinesd-main" role="main">
 
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
           <section>

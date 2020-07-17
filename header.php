@@ -17,7 +17,8 @@
 	</head>
 	<body <?php body_class(); ?>>
 			<!-- header -->
-			<header class="header clear" role="header">
+			<?php $headerClass =  is_front_page() ? 'home' : '';?>
+			<header class="header clear <?php echo $headerClass; ?>" role="header">
         <div class="container">
             <!-- logo -->
   					<div class="logo">

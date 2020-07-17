@@ -19,6 +19,10 @@ Tags: SASS, clean
 .. 03. Fonts
 .. 04. Base
 .. 05. Header
+.. 06. Footer
+.. 07. Banner
+.. 08. Sections
+.. 08. Buttons
 */
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 /**
@@ -65,11 +69,11 @@ table {
 }
 
 ::-webkit-scrollbar-track-piece:start {
-	background: transparent url("images/backgrounds/scrollbar.png") repeat-y !important;
+	background: transparent url("images/backgrounds/scrollbar.png") repeat-x !important;
 }
 
 ::-webkit-scrollbar-track-piece:end {
-	background: transparent url("images/backgrounds/scrollbar.png") repeat-y !important;
+	background: transparent url("images/backgrounds/scrollbar.png") repeat-x !important;
 }
 
 input {
@@ -160,6 +164,10 @@ h1, h2, h3 {
 	font-family: "Campton";
 }
 
+/* -----------------------------------------
+	Base Container with responsiveness rule applied
+--------------------------------------------
+*/
 .container {
 	width: 1200px;
 	margin: 0 auto;
@@ -224,11 +232,26 @@ h1, h2, h3 {
 	justify-content: flex-end;
 }
 
+/* -----------------------------------------
+	Header Styling
+--------------------------------------------
+*/
 header {
 	background: #000;
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1000;
+	-webkit-transition: background ease-in-out 0.3s;
+	transition: background ease-in-out 0.3s;
+}
+
+header.home {
+	background: transparent;
+}
+
+header.home.scrolled {
+	background: #000;
 }
 
 header .container {
@@ -433,6 +456,16 @@ header nav ul li a:hover {
 	line-height: 70px;
 }
 
+@media (max-width: 768px) {
+	.disableScroll {
+		overflow: hidden;
+	}
+}
+
+/* -----------------------------------------
+	Footer Styling
+--------------------------------------------
+*/
 footer {
 	background: #000;
 	color: #fff;
@@ -681,4 +714,572 @@ footer .secondary .icon {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #fff;
+}
+
+/* -----------------------------------------
+	Banner Styling
+--------------------------------------------
+*/
+section.banner {
+	position: relative;
+	overflow: hidden;
+	padding: 0px;
+}
+
+section.banner #videoBG {
+	position: absolute;
+	z-index: -10;
+	height: 1064px;
+}
+
+@media (max-width: 768px) {
+	section.banner #videoBG {
+		height: 896px;
+	}
+}
+
+section.banner.home {
+	height: 1064px;
+}
+
+@media (max-width: 768px) {
+	section.banner.home {
+		height: 896px;
+	}
+}
+
+section.banner .headline {
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+}
+
+section.banner .headline .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 100vh;
+}
+
+section.banner .headline .container h1 {
+	font-size: 110px;
+	color: #fff;
+	line-height: 90px;
+}
+
+@media (max-width: 768px) {
+	section.banner .headline .container h1 {
+		font-size: 65px;
+		line-height: 57px;
+	}
+}
+
+section.banner .overlay {
+	width: 100%;
+	height: 1064px;
+	position: absolute;
+	z-index: -9;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+	section.banner .overlay {
+		height: 896px;
+	}
+}
+
+/* -----------------------------------------
+	Sections & Custom Elements Styling
+--------------------------------------------
+*/
+section.intro {
+	padding: 150px 0px;
+}
+
+@media (max-width: 768px) {
+	section.intro {
+		padding: 100px 0px;
+	}
+}
+
+section.intro .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	section.intro .container {
+		display: block;
+	}
+}
+
+section.intro .container .col.content {
+	width: 626px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.content {
+		width: 100%;
+	}
+}
+
+section.intro .container .col.content h2 {
+	font-family: "HelveticaNeueLTPro-Bd";
+	font-size: 24px;
+	line-height: 29px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.content h2 {
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+section.intro .container .col.content p {
+	font-size: 18px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.content p {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+section.intro .container .col.label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.label {
+		display: block;
+	}
+}
+
+section.intro .container .col.label span {
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.label span {
+		display: block;
+		font-size: 16px;
+	}
+}
+
+section.intro .container .col.label span.hr {
+	width: 250px;
+	height: 1px;
+	border-top: 1px solid #000;
+	margin: 4px 20px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.label span.hr {
+		height: 70px;
+		width: 1px;
+		border: none;
+		border-left: 1px solid #000;
+		margin: 20px 4px;
+	}
+}
+
+section.content {
+	padding: 150px 0px;
+}
+
+section.content h3 {
+	font-size: 30px;
+}
+
+section.content p.copy.big {
+	width: 900px;
+	font-size: 48px;
+	line-height: 62px;
+	letter-spacing: -1px;
+	margin: 100px auto 0;
+}
+
+@media (max-width: 768px) {
+	section.content p.copy.big {
+		width: 100%;
+		font-size: 36px;
+		line-height: 42px;
+		margin-top: 50px;
+	}
+}
+
+section.content p.copy.big b {
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+section.content.clients {
+	position: relative;
+	padding: 0px;
+	overflow: -moz-scrollbars-none;
+	/* Firefox */
+	-ms-overflow-style: none;
+	/* IE */
+}
+
+@media (max-width: 768px) {
+	section.content.clients {
+		overflow-x: scroll;
+		margin: 100px 0px;
+	}
+}
+
+section.content.clients::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+section.content.clients .overlay {
+	background: rgba(0, 0, 0, 0.05);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+@media (max-width: 768px) {
+	section.content.clients .overlay {
+		width: 1260px;
+	}
+}
+
+section.content.clients .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 150px 0px;
+	margin: 150px auto;
+}
+
+@media (max-width: 768px) {
+	section.content.clients .container {
+		display: block;
+		overflow: auto;
+		width: 1260px;
+		margin: 0px;
+		padding: 100px 0px;
+	}
+}
+
+section.content.clients .container span {
+	display: block;
+	width: 174px;
+	height: 180px;
+	background-size: contain !important;
+}
+
+@media (max-width: 768px) {
+	section.content.clients .container span {
+		float: left;
+	}
+}
+
+section.content.clients .container span.dsw {
+	background: url("assets/logos/dsw.png");
+}
+
+section.content.clients .container span.intel {
+	background: url("assets/logos/intel.png");
+}
+
+section.content.clients .container span.mahindra {
+	background: url("assets/logos/mahindra.png");
+}
+
+section.content.clients .container span.mars-wrigley {
+	background: url("assets/logos/mars-wrigley.png");
+}
+
+section.content.clients .container span.scjohnson {
+	background: url("assets/logos/scjohnson.png");
+}
+
+section.content.clients .container span.tyson {
+	background: url("assets/logos/tyson.png");
+}
+
+section.content.clients .container span.zipline {
+	background: url("assets/logos/zipline.png");
+}
+
+section.content.approach {
+	padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+	section.content.approach {
+		padding: 0px;
+	}
+}
+
+section.content.approach p {
+	font-size: 18px;
+	line-height: 30px;
+	width: 621px;
+	margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+	section.content.approach p {
+		width: 100%;
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	section.content.approach h3 {
+		font-size: 28px;
+	}
+}
+
+section.content.approach span.approach-diagram {
+	display: block;
+	width: 800px;
+	height: 444px;
+	background: url("assets/approach.png");
+	background-size: cover;
+	margin: 50px 0px 100px;
+}
+
+@media (max-width: 768px) {
+	section.content.approach span.approach-diagram {
+		width: 100%;
+		background: url("assets/approach-mobile.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 340px;
+		background-position: center;
+	}
+}
+
+section.content.approach .items {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+@media (max-width: 768px) {
+	section.content.approach .items {
+		display: block;
+	}
+}
+
+section.content.approach .items .item {
+	width: 270px;
+	margin: 0px 20px;
+}
+
+@media (max-width: 768px) {
+	section.content.approach .items .item {
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 0px 0px 30px;
+	}
+}
+
+section.content.approach .items .item h4 {
+	font-family: "HelveticaNeueLTPro-Bd";
+	font-size: 24px;
+	line-height: 30px;
+	width: 70%;
+}
+
+@media (max-width: 768px) {
+	section.content.approach .items .item h4 {
+		font-size: 30px;
+		width: 100%;
+	}
+}
+
+section.content.approach .items .item p {
+	width: 100%;
+	font-size: 15px;
+	margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+	section.content.approach .items .item p {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+section.highlight {
+	background: #FFF200;
+}
+
+@media (max-width: 768px) {
+	section.highlight {
+		padding: 100px 0px;
+	}
+}
+
+section.pine-sense {
+	overflow: auto;
+}
+
+@media (max-width: 768px) {
+	section.pine-sense {
+		padding: 50px 0px;
+	}
+}
+
+section.pine-sense .post {
+	width: 626px;
+	height: 352px;
+	background-size: contain !important;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+	section.pine-sense .post {
+		width: 100%;
+		height: 210px;
+	}
+}
+
+section.pine-sense .post span.title {
+	background: rgba(0, 0, 0, 0.4);
+	display: block;
+	width: 100%;
+	height: 80px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0px 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 24px;
+	color: #FFF;
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+@media (max-width: 768px) {
+	section.pine-sense .post span.title {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+section.pine-labs {
+	padding-top: 0px;
+	overflow: auto;
+}
+
+section.pine-labs .container .col.content h2 {
+	font-size: 110px;
+	line-height: 90px;
+	color: #FFF200;
+	font-family: "Campton";
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+	section.pine-labs .container .col.content h2 {
+		font-size: 65px;
+		line-height: 57px;
+		word-wrap: break-word;
+	}
+}
+
+section.pine-labs .container .col.content button, section.pine-labs .container .col.content a {
+	width: 281px;
+}
+
+/* -----------------------------------------
+	Buttons Styling
+--------------------------------------------
+*/
+button, a {
+	cursor: pointer;
+}
+
+button.btn, a.btn {
+	margin: 50px 0px;
+}
+
+button.btn.pinesd-btn-primary, a.btn.pinesd-btn-primary {
+	background: transparent;
+	text-transform: uppercase;
+	border: 1px solid #000;
+	width: 214px;
+	height: 68px;
+	position: relative;
+	text-decoration: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	text-align: center;
+}
+
+button.btn.pinesd-btn-primary span, a.btn.pinesd-btn-primary span {
+	position: relative;
+	z-index: 1000;
+	font-size: 18px;
+	color: #000;
+	font-family: "HelveticaNeueLTPro-Bd";
+	letter-spacing: 1px;
+	-webkit-transition: color ease-in-out 0.5s;
+	transition: color ease-in-out 0.5s;
+}
+
+button.btn.pinesd-btn-primary span.background, a.btn.pinesd-btn-primary span.background {
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	background: #000;
+	top: 0px;
+	left: 0px;
+	-webkit-transition: width ease-in-out 0.3s;
+	transition: width ease-in-out 0.3s;
+	z-index: -1;
+}
+
+button.btn.pinesd-btn-primary:hover span, a.btn.pinesd-btn-primary:hover span {
+	width: 100%;
+	color: #fff !important;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+button.btn.right, a.btn.right {
+	float: right;
 }

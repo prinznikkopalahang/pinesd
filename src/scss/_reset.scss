@@ -38,11 +38,11 @@ table {
   border-spacing: 0; }
 
 ::-webkit-scrollbar-track-piece:start {
-  background: transparent url('images/backgrounds/scrollbar.png') repeat-y !important;
+  background: transparent url('images/backgrounds/scrollbar.png') repeat-x !important;
 }
 
 ::-webkit-scrollbar-track-piece:end {
-  background: transparent url('images/backgrounds/scrollbar.png') repeat-y !important;
+  background: transparent url('images/backgrounds/scrollbar.png') repeat-x !important;
 }
 
 input {

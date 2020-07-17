@@ -1,8 +1,21 @@
+/* -----------------------------------------
+	Header Styling
+--------------------------------------------
+*/
+
 header{
   background: $pinesdSecondary;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
+  transition: background ease-in-out 0.3s;
+  &.home{
+    background: transparent;
+    &.scrolled{
+      background: $pinesdSecondary;
+    }
+  }
   .container{
     display: flex;
     position: relative;
@@ -155,5 +168,11 @@ header{
         }
       }
     }
+  }
+}
+
+.disableScroll{
+  @media(max-width: $sm){
+    overflow: hidden;
   }
 }

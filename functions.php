@@ -36,12 +36,66 @@ function register_pinesd_nav()
   );
 }
 
-function pinesd_nav($location){
+function pinesd_nav($location)
+{
     wp_nav_menu( array(
       'theme_location' => $location,
       'container_class' => 'pinesd-nav' )
     );
 }
+
+function create_pinesd_post_type(){
+
+  register_post_type( 'labs',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Pine Labs' ),
+                'singular_name' => __( 'Pine Lab' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+						'menu_icon' => 'dashicons-book',
+						'show_in_nav_menus'     => true,
+						'show_in_admin_bar'     => true,
+						'query_var'             => true,
+						'show_ui'               => true,
+            'rewrite' => array(
+							'slug' => 'labs',
+							'with_front'            => false
+						),
+						'menu_position'         => 4,
+						'show_in_rest' => true,
+						'supports'              => array(
+                    'title',
+                    'editor',
+                    'excerpt',
+                    'author',
+										'category',
+                    'thumbnail',
+                    'trackbacks',
+                    'revisions',
+                    'page-attributes',
+                    'post-formats',
+                ),
+        )
+    );
+
+		register_taxonomy( 'lab_category', 'labs', array(
+					'hierarchical' => false,
+					'label' => 'Pine Lab Categories',
+					'query_var' => true,
+					'label' => __('Categories'),
+					'hierarchical' => true,
+          'show_in_rest' => true, // Needed for tax to appear in Gutenberg editor
+					'show_ui' => true,
+					'rewrite' =>  array(
+						'slug' => 'labs',
+            'with_front'=> false
+					)
+			) );
+}
+
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -51,3 +105,5 @@ function pinesd_nav($location){
 add_action('init', 'pinesd_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'pinesd_styles'); // Add Theme Stylesheet
 add_action( 'init', 'register_pinesd_nav' ); // Add custom navigations
+add_action( 'init', 'create_pinesd_post_type' ); //Register Aloi Docs Post Type
+//Shortcodes

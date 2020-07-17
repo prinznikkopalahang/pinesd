@@ -1,0 +1,54 @@
+/* -----------------------------------------
+	Buttons Styling
+--------------------------------------------
+*/
+
+button, a{
+  cursor: pointer;
+  &.btn{
+    margin: 50px 0px;
+    &.pinesd-btn-primary{
+      background: transparent;
+      text-transform: uppercase;
+      border: 1px solid $pinesdSecondary;
+      width: 214px;
+      height: 68px;
+      position: relative;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      span{
+        position: relative;
+        z-index: 1000;
+        font-size: 18px;
+        color: #000;
+        font-family: "HelveticaNeueLTPro-Bd";
+        letter-spacing: 1px;
+        transition: color ease-in-out 0.5s;
+        &.background{
+          position: absolute;
+          width: 0%;
+          height: 100%;
+          background: $pinesdSecondary;
+          top: 0px;
+          left: 0px;
+          transition: width ease-in-out 0.3s;
+          z-index: -1;
+        }
+      }
+      &:hover{
+        span{
+          width: 100%;
+          color: #fff !important;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    &.right{
+      float: right;
+    }
+  }
+}

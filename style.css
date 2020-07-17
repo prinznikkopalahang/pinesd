@@ -1062,8 +1062,8 @@ section.content.approach span.approach-diagram {
 		background: url("assets/approach-mobile.png");
 		background-size: contain;
 		background-repeat: no-repeat;
-		height: 340px;
-		background-position: center;
+		height: 375px;
+		background-position: left;
 	}
 }
 
@@ -1204,7 +1204,7 @@ section.pine-labs .container .col.content h2 {
 
 @media (max-width: 768px) {
 	section.pine-labs .container .col.content h2 {
-		font-size: 65px;
+		font-size: 70px;
 		line-height: 57px;
 		word-wrap: break-word;
 	}

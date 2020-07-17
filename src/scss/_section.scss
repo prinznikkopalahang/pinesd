@@ -192,8 +192,8 @@ section{
             background: url('assets/approach-mobile.png');
             background-size: contain;
             background-repeat: no-repeat;
-            height: 340px;
-            background-position: center;
+            height: 375px;
+            background-position: left;
           }
         }
       }
@@ -290,7 +290,7 @@ section{
             text-transform: uppercase;
             margin-bottom: 50px;
             @media(max-width: $sm){
-                font-size: 65px;
+                font-size: 70px;
                 line-height: 57px;
                 word-wrap:break-word;
             }

@@ -820,6 +820,20 @@ section.banner .overlay {
 	}
 }
 
+@media (max-width: 768px) {
+	body.work section.banner {
+		background-position: -610px 200px !important;
+		background-repeat: no-repeat !important;
+	}
+}
+
+@media (max-width: 768px) {
+	body.work section.banner h1 {
+		width: 100%;
+		word-break: break-word;
+	}
+}
+
 /* -----------------------------------------
 	Sections & Custom Elements Styling
 --------------------------------------------
@@ -876,7 +890,6 @@ section.intro .container .col.content h2 {
 section.intro .container .col.content p {
 	font-size: 18px;
 	line-height: 30px;
-	margin-top: 10px;
 }
 
 section.intro .container .col.content p.copy.big {
@@ -1072,6 +1085,16 @@ section.content.clients .container span.tyson {
 
 section.content.clients .container span.zipline {
 	background: url("assets/logos/zipline.png");
+}
+
+@media (max-width: 768px) {
+	section.content.clients.no-margin {
+		margin: 0 auto;
+	}
+}
+
+section.content.clients.no-margin .container {
+	margin: 0 auto;
 }
 
 section.content.approach {
@@ -1362,7 +1385,7 @@ section.pine-process .steps {
 }
 
 section.pine-process .steps .step {
-	width: 280px;
+	width: 290px;
 	min-height: 354px;
 	opacity: 0;
 	-webkit-transition: opacity ease-in-out 0.5s;
@@ -1381,7 +1404,7 @@ section.pine-process .steps .step.recur::after {
 	width: 44px;
 	height: 40px;
 	content: "";
-	display: block;
+	display: none;
 	position: absolute;
 	background: url("assets/recur-icon.png");
 	background-size: cover;
@@ -1390,9 +1413,15 @@ section.pine-process .steps .step.recur::after {
 }
 
 @media (max-width: 768px) {
+	section.pine-process .steps .step.recur::after {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
 	section.pine-process .steps .step {
 		width: 100%;
-		opacity: 1;
+		opacity: 1 !important;
 	}
 }
 
@@ -1415,6 +1444,12 @@ section.pine-process .steps .step.active.in::before {
 	right: auto;
 }
 
+@media (max-width: 768px) {
+	section.pine-process .steps .step.active.in::before {
+		background: #fff;
+	}
+}
+
 section.pine-process .steps .step.active.out::before {
 	background: #FFF200;
 	right: 0px;
@@ -1424,6 +1459,10 @@ section.pine-process .steps .step.active.out::before {
 
 section.pine-process .steps .step:nth-child(1) {
 	opacity: 1;
+}
+
+section.pine-process .steps .step:last-child {
+	margin-right: 0px;
 }
 
 section.pine-process .steps .step h4 {
@@ -1495,6 +1534,293 @@ section.copyright {
 
 section.copyright a {
 	color: #999;
+}
+
+section.pine-services {
+	padding: 150px 0px 0px;
+	overflow: auto;
+}
+
+section.pine-services .container h3 {
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+	section.pine-services .container .services p {
+		margin-bottom: 20px;
+	}
+}
+
+section.pine-services .container .services span {
+	display: block;
+	font-size: 62px;
+	line-height: 70px;
+	font-family: "HelveticaNeueLTPro-Bd";
+	background: #FFF200;
+	width: auto;
+	float: left;
+	margin-bottom: 15px;
+	padding: 10px 3px 0px;
+}
+
+@media (max-width: 768px) {
+	section.pine-services .container .services span {
+		font-size: 36px;
+		display: inline;
+		float: none;
+		line-height: 42px;
+		margin-bottom: 10px;
+	}
+}
+
+section.works {
+	padding: 150px 0px 0px;
+}
+
+section.works .container h3 {
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	margin-bottom: 100px;
+}
+
+section.works .container span.highlight {
+	background: #FFF200;
+}
+
+@media (max-width: 768px) {
+	section.works .container span.highlight {
+		display: inline !important;
+	}
+}
+
+section.works .container .intro {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro {
+		display: block;
+	}
+}
+
+section.works .container .intro .col.content {
+	width: 626px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.content {
+		width: 100%;
+	}
+}
+
+section.works .container .intro .col.content h4 {
+	font-size: 22px;
+	margin-bottom: 25px;
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+section.works .container .intro .col.content h2 {
+	font-family: "HelveticaNeueLTPro-Bd";
+	font-size: 24px;
+	line-height: 29px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.content h2 {
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+section.works .container .intro .col.content p {
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+section.works .container .intro .col.content p.copy.big {
+	font-size: 62px;
+	line-height: 70px;
+	letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.content p.copy.big {
+		width: 100%;
+		font-size: 36px;
+		line-height: 42px;
+		margin-top: 50px;
+	}
+}
+
+section.works .container .intro .col.content p.copy.big b {
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+section.works .container .intro .col.content p span.highlight {
+	background: #FFF200;
+	padding: 5px 0px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.content p {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+section.works .container .intro .col.label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.label {
+		display: block;
+	}
+}
+
+section.works .container .intro .col.label span {
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.label span {
+		display: block;
+		font-size: 16px;
+	}
+}
+
+section.works .container .intro .col.label span.hr {
+	width: 250px;
+	height: 1px;
+	border-top: 1px solid #000;
+	margin: 4px 20px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.label span.hr {
+		height: 70px;
+		width: 1px;
+		border: none;
+		border-left: 1px solid #000;
+		margin: 20px 4px;
+	}
+}
+
+section.works .container .posts {
+	overflow: auto;
+	display: grid;
+	grid-template-columns: calc(50% - 7.5px) calc(50% - 7.5px);
+	grid-gap: 15px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	section.works .container .posts {
+		display: block;
+	}
+}
+
+section.works .container .posts .post {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 352px;
+	background-size: cover !important;
+	background-position: top center !important;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+	section.works .container .posts .post {
+		margin-bottom: 5%;
+	}
+}
+
+section.works .container .posts .post .title-wrapper {
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	position: relative;
+}
+
+section.works .container .posts .post .title-wrapper h2 {
+	font-size: 43px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	section.works .container .posts .post .title-wrapper h2 {
+		font-size: 24px;
+		width: calc(100% - 50px);
+		display: block;
+	}
+}
+
+section.works .container .posts .post .title-wrapper span {
+	color: #fff;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+@media (max-width: 768px) {
+	section.works .container .posts .post .title-wrapper span {
+		font-size: 18px;
+		width: calc(100% - 100px);
+		display: block;
+		line-height: 21px;
+	}
+}
+
+section.works .container .posts .post .title-wrapper .action {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+
+section.works .container .posts .post .title-wrapper .action a {
+	display: block;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #FFF200;
+	font-size: 22px;
+	border: 1px solid #FFF200;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-transition: background ease-in-out 0.5s, color ease-in-out 0.5s;
+	transition: background ease-in-out 0.5s, color ease-in-out 0.5s;
+}
+
+section.works .container .posts .post .title-wrapper .action a:hover {
+	color: #000;
+	background: #FFF200;
 }
 
 /* Animations */

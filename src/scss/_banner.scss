@@ -74,3 +74,22 @@ section{
     }
   }
 }
+
+body{
+  &.work{
+    section{
+      &.banner{
+        @media(max-width: $sm){
+          background-position: -610px 200px !important;
+          background-repeat: no-repeat !important;
+        }
+        h1{
+          @media(max-width: $sm){
+            width: 100%;
+            word-break: break-word;
+          }
+        }
+      }
+    }
+  }
+}

@@ -94,6 +94,52 @@ function create_pinesd_post_type(){
             'with_front'=> false
 					)
 			) );
+  register_post_type( 'works',
+      array(
+        'labels' => array(
+        'name' => __( 'Pine Works' ),
+        'singular_name' => __( 'Pine Works' )),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-book',
+        'show_in_nav_menus'     => true,
+        'show_in_admin_bar'     => true,
+        'query_var'             => true,
+        'show_ui'               => true,
+        'rewrite' => array(
+                'slug' => 'works',
+                'with_front'  => false
+              ),
+        'menu_position' => 4,
+        'show_in_rest' => true,
+        'supports'  => array(
+                        'title',
+                        'editor',
+                        'excerpt',
+                        'author',
+                        'category',
+                        'thumbnail',
+                        'trackbacks',
+                        'revisions',
+                        'page-attributes',
+                        'post-formats',
+                ),
+            )
+        );
+
+    register_taxonomy( 'works_category', 'works', array(
+    					'hierarchical' => false,
+    					'label' => 'Works Categories',
+    					'query_var' => true,
+    					'label' => __('Categories'),
+    					'hierarchical' => true,
+              'show_in_rest' => true, // Needed for tax to appear in Gutenberg editor
+    					'show_ui' => true,
+    					'rewrite' =>  array(
+    						'slug' => 'works',
+                'with_front'=> false
+    					)
+    			) );
 }
 
 

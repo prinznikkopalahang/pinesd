@@ -15,7 +15,7 @@
 		<?php wp_head(); ?>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class($post->post_name);?>>
 			<!-- header -->
 			<?php $headerClass =  is_front_page() ? 'home' : '';?>
 			<header class="header clear <?php echo $headerClass; ?>" role="header">

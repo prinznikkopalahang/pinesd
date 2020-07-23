@@ -168,6 +168,10 @@ h1, h2, h3 {
 	Base Container with responsiveness rule applied
 --------------------------------------------
 */
+body.disabled {
+	overflow: hidden;
+}
+
 .container {
 	width: 1200px;
 	margin: 0 auto;
@@ -250,8 +254,8 @@ header.home {
 	background: transparent;
 }
 
-header.home.scrolled {
-	background: #000;
+header.scrolled {
+	background: rgba(0, 0, 0, 0.9);
 }
 
 header .container {
@@ -724,6 +728,19 @@ section.banner {
 	position: relative;
 	overflow: hidden;
 	padding: 0px;
+	height: 800px;
+	background-size: cover !important;
+	background-position-y: 100px !important;
+	z-index: -1;
+}
+
+section.banner::before {
+	content: "";
+	display: block;
+	height: 235px;
+	background: #000;
+	z-index: -1;
+	position: relative;
 }
 
 section.banner #videoBG {
@@ -740,6 +757,18 @@ section.banner #videoBG {
 
 section.banner.home {
 	height: 1064px;
+}
+
+section.banner.home::before {
+	display: none;
+}
+
+section.banner.home .container {
+	height: 100vh;
+}
+
+section.banner.home .container h1 {
+	margin-top: 0px;
 }
 
 @media (max-width: 768px) {
@@ -761,13 +790,13 @@ section.banner .headline .container {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	height: 100vh;
 }
 
 section.banner .headline .container h1 {
 	font-size: 110px;
 	color: #fff;
-	line-height: 90px;
+	line-height: 80px;
+	margin-top: -35px;
 }
 
 @media (max-width: 768px) {
@@ -803,6 +832,10 @@ section.intro {
 	section.intro {
 		padding: 100px 0px;
 	}
+}
+
+section.intro.idea {
+	background: #FFF200;
 }
 
 section.intro .container {
@@ -844,6 +877,30 @@ section.intro .container .col.content p {
 	font-size: 18px;
 	line-height: 30px;
 	margin-top: 10px;
+}
+
+section.intro .container .col.content p.copy.big {
+	font-size: 62px;
+	line-height: 70px;
+	letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+	section.intro .container .col.content p.copy.big {
+		width: 100%;
+		font-size: 36px;
+		line-height: 42px;
+		margin-top: 50px;
+	}
+}
+
+section.intro .container .col.content p.copy.big b {
+	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+section.intro .container .col.content p span.highlight {
+	background: #FFF200;
+	padding: 5px 0px;
 }
 
 @media (max-width: 768px) {
@@ -1053,6 +1110,7 @@ section.content.approach span.approach-diagram {
 	height: 444px;
 	background: url("assets/approach.png");
 	background-size: cover;
+	background-repeat: no-repeat;
 	margin: 50px 0px 100px;
 }
 
@@ -1060,6 +1118,22 @@ section.content.approach span.approach-diagram {
 	section.content.approach span.approach-diagram {
 		width: 100%;
 		background: url("assets/approach-mobile.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 375px;
+		background-position: left;
+	}
+}
+
+section.content.approach span.approach-diagram.pine-difference {
+	background: url("assets/approach-2.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+	section.content.approach span.approach-diagram.pine-difference {
+		background: url("assets/approach-2-mobile.png");
 		background-size: contain;
 		background-repeat: no-repeat;
 		height: 375px;
@@ -1212,6 +1286,251 @@ section.pine-labs .container .col.content h2 {
 
 section.pine-labs .container .col.content button, section.pine-labs .container .col.content a {
 	width: 281px;
+}
+
+section.dictionary {
+	position: relative;
+	margin-bottom: 150px;
+}
+
+section.dictionary::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 75px;
+	background: #FFF200;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+section.dictionary .term {
+	width: 626px;
+	height: 150px;
+	margin: 0 auto 0;
+	background: #000;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 24px;
+	color: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	section.dictionary .term {
+		width: 100%;
+		padding: 20px;
+		text-align: center;
+		line-height: 28px;
+	}
+}
+
+section.dictionary .term b {
+	font-family: "HelveticaNeueLTPro-Bd";
+	margin-right: 10px;
+}
+
+section.dictionary .term i {
+	margin: 0px 10px;
+}
+
+section.pine-process h3 {
+	font-size: 30px;
+	line-height: 30px;
+	margin-bottom: 100px;
+}
+
+section.pine-process .steps {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	section.pine-process .steps {
+		display: block;
+	}
+}
+
+section.pine-process .steps .step {
+	width: 280px;
+	min-height: 354px;
+	opacity: 0;
+	-webkit-transition: opacity ease-in-out 0.5s;
+	transition: opacity ease-in-out 0.5s;
+	background: rgba(0, 0, 0, 0.05);
+	margin-right: 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 20px;
+	position: relative;
+	padding-top: 66px;
+	box-sizing: border-box;
+}
+
+section.pine-process .steps .step.recur::after {
+	width: 44px;
+	height: 40px;
+	content: "";
+	display: block;
+	position: absolute;
+	background: url("assets/recur-icon.png");
+	background-size: cover;
+	left: calc(50% - 22px);
+	top: -8px;
+}
+
+@media (max-width: 768px) {
+	section.pine-process .steps .step {
+		width: 100%;
+		opacity: 1;
+	}
+}
+
+section.pine-process .steps .step::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 26px;
+	background: #fff;
+	top: 0px;
+	left: 0;
+	right: 0;
+}
+
+section.pine-process .steps .step.active.in::before {
+	background: #FFF200;
+	left: 0px;
+	top: 0px;
+	right: auto;
+}
+
+section.pine-process .steps .step.active.out::before {
+	background: #FFF200;
+	right: 0px;
+	top: 0px;
+	left: auto;
+}
+
+section.pine-process .steps .step:nth-child(1) {
+	opacity: 1;
+}
+
+section.pine-process .steps .step h4 {
+	font-family: "HelveticaNeueLTPro-Bd";
+	font-size: 24px;
+	line-height: 29px;
+	color: #000;
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+section.pine-process .steps .step p {
+	font-size: 15px;
+	line-height: 19px;
+}
+
+section.pine-process .steps .step hr {
+	border: none;
+	border-bottom: 1px solid #000;
+	position: absolute;
+	top: 230px;
+	width: 240px;
+}
+
+@media (max-width: 768px) {
+	section.pine-process .steps .step hr {
+		width: 90%;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+section.pine-process .steps .step .details {
+	position: absolute;
+	top: 250px;
+}
+
+section.pine-process .steps .step .details.recur::before {
+	width: 44px;
+	height: 40px;
+	content: "";
+	display: block;
+	position: absolute;
+	background: url("assets/recur-icon.png");
+	background-size: cover;
+	left: -52px;
+	top: -30px;
+}
+
+@media (max-width: 768px) {
+	section.pine-process .steps .step .details.recur::before {
+		display: none;
+	}
+}
+
+section.pine-process .steps .step .details span {
+	display: block;
+	font-size: 15px;
+	line-height: 19px;
+}
+
+section.copyright {
+	padding: 150px 0 0;
+	text-align: right;
+	font-size: 12px;
+	line-height: 30px;
+	color: #999;
+}
+
+section.copyright a {
+	color: #999;
+}
+
+/* Animations */
+@-webkit-keyframes step-in {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes step-in {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes step-out {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes step-out {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
 }
 
 /* -----------------------------------------

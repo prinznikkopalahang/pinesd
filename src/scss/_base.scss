@@ -3,6 +3,12 @@
 --------------------------------------------
 */
 
+body{
+  &.disabled{
+    overflow: hidden;
+  }
+}
+
 .container{
   width: $lg;
   margin: 0 auto;

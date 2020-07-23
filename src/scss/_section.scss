@@ -9,6 +9,9 @@ section{
     @media(max-width: $sm){
       padding: 100px 0px;
     }
+    &.idea{
+      background: $pinesdPrimary;
+    }
     .container{
         display: flex;
         @media(max-width: $sm){
@@ -34,6 +37,28 @@ section{
               font-size: 18px;
               line-height: 30px;
               margin-top: 10px;
+              &.copy{
+                &.big{
+                  font-size: 62px;
+                  line-height: 70px;
+                  letter-spacing: -1px;
+                  @media(max-width: $sm){
+                    width: 100%;
+                    font-size: 36px;
+                    line-height: 42px;
+                    margin-top: 50px;
+                  }
+                  b{
+                    font-family: "HelveticaNeueLTPro-Bd";
+                  }
+                }
+              }
+              span{
+                &.highlight{
+                  background: $pinesdPrimary;
+                  padding: 5px 0px;
+                }
+              }
               @media(max-width: $sm){
                   font-size: 20px;
                   line-height: 30px;
@@ -186,6 +211,7 @@ section{
           height: 444px;
           background: url('assets/approach.png');
           background-size: cover;
+          background-repeat: no-repeat;
           margin: 50px 0px 100px;
           @media(max-width: $sm){
             width: 100%;
@@ -194,6 +220,18 @@ section{
             background-repeat: no-repeat;
             height: 375px;
             background-position: left;
+          }
+          &.pine-difference{
+            background: url('assets/approach-2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            @media(max-width: $sm){
+              background: url('assets/approach-2-mobile.png');
+              background-size: contain;
+              background-repeat: no-repeat;
+              height: 375px;
+              background-position: left;
+            }
           }
         }
       }
@@ -301,5 +339,206 @@ section{
         }
       }
     }
+  }
+  &.dictionary{
+    position: relative;
+    margin-bottom: 150px;
+    &::before{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 75px;
+      background: $pinesdPrimary;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .term{
+      width: 626px;
+      height: 150px;
+      margin: 0 auto 0;
+      background: $pinesdSecondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+      box-sizing: border-box;
+      @media(max-width: $sm){
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        line-height: 28px;
+      }
+      b{
+        font-family: "HelveticaNeueLTPro-Bd";
+        margin-right: 10px;
+      }
+      i{
+        margin:0px 10px;
+      }
+    }
+  }
+  &.pine-process{
+    h3{
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 100px;
+    }
+    .steps{
+      display: flex;
+      @media(max-width: $sm){
+        display: block;
+      }
+      .step{
+        width: 280px;
+        min-height: 354px;
+        opacity: 0;
+        transition: opacity ease-in-out 0.5s;
+        background: rgba($pinesdSecondary,0.05);
+        margin-right: 20px;
+        box-sizing: border-box;
+        padding: 20px;
+        position: relative;
+        padding-top: 66px;
+        box-sizing: border-box;
+        &.recur{
+          &::after{
+            width: 44px;
+            height: 40px;
+            content: "";
+            display: block;
+            position: absolute;
+            background: url('assets/recur-icon.png');
+            background-size: cover;
+            left: calc(50% - 22px);
+            top: -8px;
+          }
+        }
+        @media(max-width: $sm){
+          width: 100%;
+          opacity: 1;
+        }
+        &::before{
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 26px;
+          background: #fff;
+          top: 0px;
+          left: 0;
+          right: 0;
+        }
+        &.active{
+          &.in{
+            &::before{
+              background: $pinesdPrimary;
+              // animation-name: step-in;
+              // animation-duration: 0.4s;
+              // animation-fill-mode: forwards;
+              left: 0px;
+              top: 0px;
+              right: auto;
+            }
+          }
+          &.out{
+            &::before{
+              background: $pinesdPrimary;
+              // animation-name: step-out;
+              // animation-duration: 0.4s;
+              // animation-fill-mode: forwards;
+              right: 0px;
+              top: 0px;
+              left: auto;
+            }
+          }
+        }
+        &:nth-child(1){
+          opacity: 1;
+        }
+        h4{
+          font-family: "HelveticaNeueLTPro-Bd";
+          font-size: 24px;
+          line-height: 29px;
+          color: $pinesdSecondary;
+          margin-bottom: 25px;
+          width: 100%;
+        }
+        p{
+          font-size: 15px;
+          line-height: 19px;
+        }
+        hr{
+          border: none;
+          border-bottom: 1px solid $pinesdSecondary;
+          position: absolute;
+          top: 230px;
+          width: 240px;
+            @media(max-width: $sm){
+              width: 90%;
+              box-sizing: border-box;
+            }
+        }
+        .details{
+          position: absolute;
+          top: 250px;
+          &.recur{
+            &::before{
+              width: 44px;
+              height: 40px;
+              content: "";
+              display: block;
+              position: absolute;
+              background: url('assets/recur-icon.png');
+              background-size: cover;
+              left: -52px;
+              top: -30px;
+                @media(max-width: $sm){
+                  display: none;
+                }
+            }
+          }
+          span{
+            display: block;
+            font-size: 15px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
+  &.copyright{
+    padding: 150px 0 0;
+    text-align: right;
+    font-size: 12px;
+    line-height: 30px;
+    color: #999;
+    a{
+      color: #999;
+    }
+  }
+}
+
+
+
+/* Animations */
+
+@keyframes step-in{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes step-out{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
   }
 }

@@ -2753,6 +2753,10 @@ button.btn.right, a.btn.right {
 	display: block;
 }
 
+#main.single section.post-wrapper .container .wp-block-image, #main.single section.post-wrapper .container img {
+	display: none;
+}
+
 #main.single section.post-wrapper .container p {
 	margin-bottom: 20px;
 	line-height: 32px;

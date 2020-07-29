@@ -30,6 +30,9 @@
               display: block;
             }
           }
+          .wp-block-image, img {
+            display: none;
+          }
           p{
             margin-bottom: 20px;
             line-height: 32px;

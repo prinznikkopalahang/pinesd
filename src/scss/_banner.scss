@@ -26,6 +26,11 @@ section{
         @media(max-width: $sm){
           height: 896px;
         }
+
+        @media(min-width: 1900px){
+          height: auto;
+          width: 100%;
+        }
     }
     &.home{
       height: 1064px;
@@ -72,6 +77,62 @@ section{
         height: 896px;
       }
     }
+    &.work{
+      height: 1065px;
+      z-index: 1;
+      &.single{
+        @media(max-width: $sm){
+          background-size: cover !important;
+          background-position: center top !important;
+          background-repeat: no-repeat !important;
+        }
+      }
+      &.scrolled{
+        z-index: -1;
+      }
+      .overlay{
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .container{
+        display: block;
+        .breadcrumbs {
+          color: #fff;
+          margin-top: -100px;
+          position: relative;
+          z-index: 1000;
+          @media(max-width: $sm){
+            margin-top: -80px;
+          }
+          span{
+            a{
+              color: #fff;
+              text-decoration: none;
+              letter-spacing: 2px;
+              font-size: 12px;
+              cursor: pointer;
+            }
+            &:nth-child(1){
+              margin-right: 10px;
+            }
+            &:nth-child(2){
+              margin-left: 10px;
+            }
+          }
+        }
+        h1{
+          width: 626px;
+          font-family: "HelveticaNeueLTPro-Bd";
+          font-size: 62px;
+          line-height: 70px;
+          margin-top: 50px;
+          @media(max-width: $sm){
+            width: 90%;
+            font-size: 33px;
+            line-height: 49px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -83,10 +144,72 @@ body{
           background-position: -610px 200px !important;
           background-repeat: no-repeat !important;
         }
+
         h1{
           @media(max-width: $sm){
             width: 100%;
             word-break: break-word;
+          }
+        }
+      }
+    }
+  }
+  &.team{
+    section{
+      &.banner{
+        background-position: center bottom !important;
+        .headline{
+          .container{
+            h1{
+              width: 80%;
+              line-height: 90px;
+              @media(max-width: $sm){
+                width: 100%;
+                font-size: 60px;
+                line-height: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.pine-sense{
+    section{
+      &.banner{
+        height: 575px;
+        .headline{
+          .container{
+            background-position: center !important;
+          }
+        }
+      }
+    }
+  }
+  &.pine-labs{
+    section{
+      &.banner{
+        height: 700px;
+        background: url('assets/Pine-Logo-GIF-slow-LOOP.gif') !important;
+        background-color: $pinesdSecondary !important;
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        @media (max-width: $sm){
+          background-size: 80% !important;
+        }
+        &::before{
+          display: none;
+        }
+        .headline{
+          top: 250px;
+          h1{
+            line-height: 90px;
+            @media(max-width: $sm){
+              width: 100%;
+              line-height: 55px;
+              word-break: break-word;
+            }
           }
         }
       }

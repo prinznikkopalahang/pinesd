@@ -24,6 +24,13 @@
           </div>
         </div>
       </section>
+      <?php if (isset($meta['pine-sense-quotations'][0])): ?>
+        <section class="dictionary">
+          <div class="container">
+            <div class="term"><span><?php echo $meta['pine-sense-quotations'][0];?></span></div>
+          </div>
+        </section>
+      <?php endif; ?>
       <?php if (isset($meta['intro'][0])): ?>
         <section class="intro">
           <div class="container">
@@ -32,7 +39,7 @@
               <span class="hr"></span>
             </div>
             <div class="col content">
-              <p><?php echo $meta['intro'][0];?></p>
+              <?php echo $meta['intro'][0];?>
             </div>
             <div class="col"></div>
           </div>
@@ -261,7 +268,15 @@
       <?php if (isset($meta['services'][0])): ?>
         <section class="pine-services">
           <div class="container">
-            <h3>Pine Services</h3>
+            <h3>
+              <?php
+                if(isset($meta['services-section-title'][0])){
+                  echo $meta['services-section-title'][0];
+                } else {
+                  echo 'Pine Services';
+                }
+              ?>
+            </h3>
             <div class="services">
               <?php
                 if(isset($meta['services'][0])){
@@ -325,25 +340,28 @@
           </div>
         </section>
       <?php endif; ?>
-      <?php if (isset($meta['photo'][0])): ?>
-        <section class="copyright">
-            <div class="container">
-              <?php
-                if (isset($meta['photo'][0])) {
-                  echo $meta['photo'][0];
-                }
-              ?>
+      <?php if (isset($meta['inquiries'][0])): ?>
+        <section class="intro inquiries">
+          <div class="container">
+            <div class="col label">
+              <span>INQUIRIES</span>
+              <span class="hr"></span>
             </div>
+            <div class="col content">
+              <?php echo $meta['inquiries'][0];?>
+            </div>
+            <div class="col"></div>
           </div>
         </section>
       <?php endif; ?>
 
+
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-          <section>
+          <section class="main-content">
               <div class="container">
                 <!-- article -->
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+                  <?php the_content(); ?>
                   <?php edit_post_link(); ?>
 
                 </div>
@@ -358,6 +376,18 @@
           <?php get_template_part('partials/404');?>
 
 
+        <?php endif; ?>
+        <?php if (isset($meta['photo'][0])): ?>
+          <section class="copyright">
+              <div class="container">
+                <?php
+                  if (isset($meta['photo'][0])) {
+                    echo $meta['photo'][0];
+                  }
+                ?>
+              </div>
+            </div>
+          </section>
         <?php endif; ?>
     </main>
 </div>

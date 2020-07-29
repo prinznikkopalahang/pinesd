@@ -42,12 +42,34 @@ footer{
         line-height: 18px;
         margin-bottom: 15px;
         font-size: 18px;
+        position: relative;
+        cursor: pointer;
         b, span{
           font-family: "HelveticaNeueLTPro-Bd";
+          position: relative;
+          z-index: 10;
         }
         b{
           color: $pinesdPrimary;
           padding-right: 10px;
+        }
+        .hover{
+          position: absolute;
+          left: 0;
+          width: 0%;
+          top: 0;
+          height: 100%;
+          background: $pinesdPrimary;
+          z-index: 1;
+          transition: width ease-in-out 0.3s;
+        }
+        &:hover{
+          b, span{
+            color: $pinesdSecondary;
+          }
+          .hover{
+            width: 100%;
+          }
         }
       }
   }

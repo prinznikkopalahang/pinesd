@@ -19,6 +19,12 @@ button, a{
       align-items: center;
       justify-content: center;
       text-align: center;
+      &.read-more{
+        width: 155px;
+        @media(max-width: $sm){
+          margin: 25px auto 0px;
+        }
+      }
       span{
         position: relative;
         z-index: 1000;

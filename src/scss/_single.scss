@@ -1,0 +1,47 @@
+#main{
+  &.single{
+    section{
+      .container{
+        width: 900px;
+        @media (max-width: $sm){
+          width: 90%;
+          box-sizing: border-box;
+        }
+      }
+      &.banner{
+        height: 700px;
+        h1{
+          width: 100%;
+        }
+      }
+      &.post-wrapper{
+        margin-top: -300px;
+        position: relative;
+        z-index: 1;
+        .container{
+          padding: 50px;
+          border-top: 10px solid $pinesdPrimary;
+          background: #fff;
+          box-shadow: 0px 0px 10px rgba($pinesdSecondary, 0.2);
+          span{
+            &.author{
+              font-size: 18px;
+              margin-bottom: 20px;
+              display: block;
+            }
+          }
+          p{
+            margin-bottom: 20px;
+            line-height: 32px;
+            a{
+              background: $pinesdPrimary;
+              padding: 5px 10px;
+              text-decoration: none;
+              color: $pinesdSecondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

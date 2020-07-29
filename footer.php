@@ -10,9 +10,11 @@
         <div class="contact-info">
           <div class="item">
             <b>EMAIL</b><span>INFO@PINESD.COM</span>
+            <div class="hover"></div>
           </div>
           <div class="item">
             <b>CALL</b><span>(614) 233-1686</span>
+            <div class="hover"></div>
           </div>
         </div>
         <div class="newsletter">

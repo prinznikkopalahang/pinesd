@@ -52,13 +52,15 @@
       <section class="content highlight">
         <div class="container">
           <h3>WE'LL FIND YOUR OPPORTUNITY</h3>
-          <p class="copy big">
-            <?php
-              if (isset($meta['opportunity'][0])) {
-                echo $meta['opportunity'][0];
-              }
-            ?>
-          </p>
+          <div class="slides">
+            <div class="wrapper">
+              <?php
+                if (isset($meta['opportunity'][0])) {
+                  echo $meta['opportunity'][0];
+                }
+              ?>
+            </div>
+          </div>
         </div>
       </section>
       <section class="content clients">

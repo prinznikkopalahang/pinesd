@@ -11,6 +11,16 @@ section{
     }
     &.idea{
       background: $pinesdPrimary;
+      .container{
+        .col{
+          &.content{
+            width: 851px;
+            @media(max-width: $sm){
+              width: 100%;
+            }
+          }
+        }
+      }
     }
     .container{
         display: flex;
@@ -28,14 +38,20 @@ section{
               font-family: "HelveticaNeueLTPro-Bd";
               font-size: 24px;
               line-height: 29px;
+              margin-bottom: 20px;
               @media(max-width: $sm){
                 font-size: 30px;
                 line-height: 36px;
+                letter-spacing: 0.5px;
               }
             }
             p{
               font-size: 18px;
               line-height: 30px;
+              margin-bottom: 20px;
+              &:last-child{
+                margin-bottom: 0px;
+              }
               &.copy{
                 &.big{
                   font-size: 62px;
@@ -94,6 +110,18 @@ section{
             }
           }
         }
+    }
+    &.inquiries{
+      .container{
+        .content{
+          h4{
+            font-family: 'HelveticaNeueLTPro-Bd';
+            font-size: 28px;
+            line-height: 30px;
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
   }
   &.content{
@@ -258,7 +286,7 @@ section{
           }
           h4{
             font-family: "HelveticaNeueLTPro-Bd";
-            font-size: 24px;
+            font-size: 23px;
             line-height: 30px;
             width: 70%;
             @media(max-width: $sm){
@@ -283,6 +311,43 @@ section{
     background: $pinesdPrimary;
     @media(max-width: $sm){
         padding: 100px 0px;
+    }
+    .slides{
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      margin-top: 100px;
+      @media(max-width: $sm){
+          height: auto;
+      }
+      .wrapper{
+        position: relative;
+        transition: top ease-in-out 0.3s;
+        &.one{
+          top: 0px;
+        }
+        &.two{
+          top: -250px;
+        }
+        &.three{
+          top: -500px;
+        }
+        &.four{
+          top: -750px;
+        }
+        .slide{
+          @media(max-width: $sm){
+              margin-top: 20px;
+          }
+          p{
+            &.copy{
+              &.big{
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
     }
   }
   &.pine-sense{
@@ -485,6 +550,7 @@ section{
         p{
           font-size: 15px;
           line-height: 19px;
+          margin-bottom: 20px;
         }
         hr{
           border: none;
@@ -524,6 +590,22 @@ section{
         }
       }
     }
+    &.work{
+      background: #fff;
+      position: relative;
+      z-index: 1;
+      .steps{
+        .step{
+          background: #fff;
+          font-size: 15px;
+          line-height: 22px;
+          @media(max-width: $sm){
+            min-height: auto;
+            padding: 30px 0px 0px !important;
+          }
+        }
+      }
+    }
   }
   &.copyright{
     padding: 150px 0 0;
@@ -531,6 +613,9 @@ section{
     font-size: 12px;
     line-height: 30px;
     color: #999;
+    p{
+      font-weight: 300;
+    }
     a{
       color: #999;
     }
@@ -547,22 +632,20 @@ section{
       }
       .services{
         p{
-          @media(max-width: $sm){
-            margin-bottom: 20px;
-          }
+          margin-bottom: 20px;
         }
         span{
           display: block;
-          font-size: 62px;
+          font-size: 60px;
           line-height: 70px;
           font-family: "HelveticaNeueLTPro-Bd";
           background: $pinesdPrimary;
           width: auto;
-          float: left;
+          display: inline;
           margin-bottom: 15px;
           padding: 10px 3px 0px;
           @media(max-width: $sm){
-            font-size: 36px;
+            font-size: 33px;
             display: inline;
             float: none;
             line-height: 42px;
@@ -750,6 +833,373 @@ section{
             }
           }
         }
+      }
+    }
+  }
+  &.featured-work{
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    @media(max-width: $sm){
+      margin: 50px 0px 0px;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  &.conclusion{
+    padding: 150px 0px;
+    @media(max-width: $sm){
+      padding-bottom: 0px;
+    }
+    .content{
+      width: 626px;
+      margin: 0 auto;
+      @media(max-width: $sm){
+        width: 100%;
+      }
+      p{
+        font-family: "HelveticaNeueLTPro-Lt";
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        font-weight: 300;
+      }
+    }
+  }
+  &.pinesd-posts{
+    .section-header{
+      display: flex;
+      @media(max-width: $sm){
+        display: block;
+      }
+      div{
+        &:last-child{
+          justify-self: end;
+        }
+        h3{
+          text-transform: uppercase;
+          font-size: 30px;
+        }
+      }
+      .search{
+        margin-left: auto;
+        position: relative;
+        height: 52px;
+        margin-top: 50px;
+        .wrapper{
+          display: flex;
+          overflow: auto;
+          border: 1px solid $pinesdSecondary;
+          width: 300px;
+          height: 50px;
+          transition: width ease-in-out 0.3s;
+          @media(max-width: $sm){
+            width: 100%;
+          }
+          input{
+            width: 250px;
+            display: block;
+            box-sizing: border-box;
+            padding: 20px;
+            border: none;
+            font-size: 18px;
+            transition: width ease-in-out 0.3s;
+            @media(max-width: $sm){
+              width: calc(100% - 50px);
+            }
+            &::placeholder{
+              text-transform: uppercase;
+              color: $pinesdSecondary;
+              font-size: 14px;
+              letter-spacing: 2px;
+              font-family: 'HelveticaNeueLTPro-Bd';
+              opacity: 1;
+            }
+          }
+          button{
+            &.btn{
+              margin: 0px;
+              &.search-btn{
+                height: 50px;
+                width: 50px;
+                display: block;
+                border: none;
+                background: $pinesdPrimary;
+                font-size: 20px;
+              }
+            }
+          }
+          &.wider{
+            width: 600px;
+            @media(max-width: $sm){
+              width: 100%;
+            }
+            input{
+              width: 550px;
+              @media(max-width: $sm){
+                width: calc(100% - 50px);
+              }
+            }
+          }
+        }
+        .results {
+          background: #fff;
+          border: 1px solid $pinesdSecondary;
+          width: 600px;
+          position: absolute;
+          top: 50px;
+          right: 0px;
+          z-index: 1001;
+          box-shadow: 0px 10px 10px rgba($pinesdSecondary, 0.2);
+          display: none;
+          max-height: 325px;
+          overflow-y: scroll;
+          @media(max-width: $sm){
+            width: 100%;
+            right: -2px;
+          }
+          &.show{
+            display: block;
+          }
+          a{
+            color: $pinesdSecondary;
+            text-decoration: none;
+          }
+          .post{
+            padding: 20px;
+            border-bottom: 1px solid $pinesdSecondary;
+            &:hover{
+              background: $pinesdPrimary
+            }
+            &:last-child{
+              border: none;
+            }
+            p{
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+    .posts{
+      padding: 100px 0px 50px;
+      @media(max-width: $sm){
+        padding: 50px 0px 50px;
+      }
+      .post{
+        background: #F2F2F2;
+        display: flex;
+        margin-bottom: 30px;
+        @media(max-width: $sm){
+          display: block;
+        }
+        .featured-image{
+          width: 322px;
+          height: 250px;
+          background: $pinesdSecondary;
+          background-size: cover !important;
+          background-position: center center !important;
+          @media(max-width: $sm){
+            width: 100%;
+          }
+        }
+        .content{
+          display: flex;
+          padding: 30px 50px 30px 30px;
+          align-items: center;
+          width: calc(100% - 322px);
+          @media(max-width: $sm){
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 50px 20px;
+          }
+          .copy{
+            padding-right: 50px;
+            @media(max-width: $sm){
+              display: block;
+              padding: 0px;
+              width: 100%;
+            }
+            h4{
+              font-size: 24px;
+              font-family: "HelveticaNeueLTPro-Bd";
+              margin-bottom: 15px;
+            }
+            .info{
+              margin-bottom: 20px;
+            }
+            p{
+              font-size: 15px;
+              line-height: 19px;
+              @media(max-width: $sm){
+                font-size: 20px;
+                line-height: 32px;
+              }
+            }
+          }
+          .actions{
+            position: relative;
+            z-index: 1000;
+          }
+        }
+      }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        a, span{
+          display: block;
+          width: 45px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $pinesdSecondary;
+          margin: 10px;
+          color: $pinesdSecondary;
+          text-decoration: none;
+          font-family: 'HelveticaNeueLTPro-Bd';
+          &:hover{
+            color: #fff;
+            background: $pinesdSecondary;
+          }
+          &.current{
+            color: #fff;
+            background: $pinesdSecondary;
+          }
+          &.prev{
+            margin-right: 50px;
+          }
+          &.next{
+            margin-left: 50px;
+          }
+        }
+    }
+  }
+}
+
+body{
+  &.team{
+    section{
+      &.main-content{
+        h3{
+          font-size: 30px;
+          line-height: 30px;
+          text-transform: uppercase;
+          margin-bottom: 100px;
+          strong{
+            font-family: "Campton";
+          }
+        }
+        .wp-block-columns{
+          margin-bottom: 100px;
+          @media(max-width: $sm){
+            display: block;
+          }
+          .wp-block-column{
+
+            &:nth-child(1){
+              flex-basis: 250px !important;
+              img{
+                @media(max-width: $sm){
+                  width: 100%;
+                }
+              }
+            }
+            &:nth-child(2){
+              flex-basis: 650px !important;
+              .wp-block-columns{
+                display: block !important;
+                overflow: auto;
+                margin-bottom: 20px;
+                  .wp-block-column{
+                    float: left;
+                    &:nth-child(1){
+                      flex-basis: auto !important;
+                      font-size: 18px;
+                      line-height: 22px;
+                    }
+                    &:nth-child(2){
+                      flex-basis: auto !important;
+                      margin-left: 15px !important;
+                    }
+                }
+              }
+            }
+            h4{
+              font-family: "HelveticaNeueLTPro-Bd";
+              font-weight: bold;
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+            p{
+              font-size: 15px;
+              margin-bottom: 20px;
+              line-height: 19px;
+              &:last-child{
+                margin-bottom: 0px;
+              }
+              @media(max-width: $sm){
+                font-size: 20px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.pine-sense{
+    section{
+      &.intro{
+        padding-top: 0px;
+      }
+      &.dictionary{
+        position: relative;
+        margin-bottom: 150px;
+        &::before{
+          display: none;
+        }
+        .term{
+          margin-top: -75px;
+          text-align: center;
+          @media(max-width: $sm){
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            line-height: 28px;
+          }
+          b{
+            font-family: "HelveticaNeueLTPro-Bd";
+            margin-right: 10px;
+          }
+          i{
+            margin:0px 10px;
+          }
+          span{
+            &.author{
+              display: block;
+              margin-top: 20px;
+              font-size: 18px;
+              i{
+                //font-family: 'HelveticaNeueLTPro-It';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.pine-labs{
+    section{
+      &.intro{
+        padding: 150px 0px 0px;
+      }
+      &.pine-services{
+        padding: 150px 0px 150px;
       }
     }
   }

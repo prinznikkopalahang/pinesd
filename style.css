@@ -1329,7 +1329,7 @@ section.content.approach {
 
 section.content.approach p {
 	font-size: 18px;
-	line-height: 22px;
+	line-height: 32px;
 	width: 621px;
 	margin-top: 30px;
 }
@@ -1432,12 +1432,13 @@ section.content.approach .items .item p {
 	width: 100%;
 	font-size: 15px;
 	margin-top: 15px;
+	line-height: 22px;
 }
 
 @media (max-width: 768px) {
 	section.content.approach .items .item p {
 		font-size: 20px;
-		line-height: 22px;
+		line-height: 32px;
 	}
 }
 

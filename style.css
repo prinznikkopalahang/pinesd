@@ -789,6 +789,12 @@ section.banner::before {
 	position: relative;
 }
 
+@media (max-width: 768px) {
+	section.banner::before {
+		height: 200px;
+	}
+}
+
 section.banner #videoBG {
 	position: absolute;
 	z-index: -10;
@@ -848,7 +854,7 @@ section.banner .headline .container {
 section.banner .headline .container h1 {
 	font-size: 110px;
 	color: #fff;
-	line-height: 90px !important;
+	line-height: 90px;
 	margin-top: -35px;
 	width: 75%;
 }
@@ -856,7 +862,7 @@ section.banner .headline .container h1 {
 @media (max-width: 768px) {
 	section.banner .headline .container h1 {
 		font-size: 65px;
-		line-height: 57px  !important;
+		line-height: 57px;
 	}
 }
 
@@ -932,7 +938,7 @@ section.banner.work .container h1 {
 	width: 626px;
 	font-family: "HelveticaNeueLTPro-Bd";
 	font-size: 62px;
-	line-height: 70px !important;
+	line-height: 70px;
 	margin-top: 50px;
 }
 
@@ -941,7 +947,7 @@ section.banner.work .container h1 {
 		width: 100%;
 		font-weight: 300;
 		font-size: 42px;
-		line-height: 49px  !important;
+		line-height: 49px;
 		letter-spacing: -1px;
 	}
 }

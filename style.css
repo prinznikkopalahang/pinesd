@@ -863,6 +863,7 @@ section.banner .headline .container h1 {
 	section.banner .headline .container h1 {
 		font-size: 65px;
 		line-height: 57px;
+		width: 100%;
 	}
 }
 

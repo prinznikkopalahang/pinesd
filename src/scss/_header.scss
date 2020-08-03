@@ -49,10 +49,11 @@ header{
         &.current-menu-item{
           &:before{
             content: "";
-            width: 100%;
+            width: calc(100% - 40px);
             position: absolute;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             height: 11px;
             background: $pinesdPrimary;
           }
@@ -108,7 +109,7 @@ header{
   width: 77vw;
   height: 100vh;
   background: $pinesdPrimary;
-  z-index: 1000;
+  z-index: 9999;
   top: 0;
   right: -77vw;
   transition: right ease-in-out 0.3s;

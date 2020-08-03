@@ -24,6 +24,16 @@ function pinesd_scripts()
 
 
   if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_register_script('modernizr', get_template_directory_uri() . '/src/js/modernizr.custom.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('modernizr'); // Enqueue it!
+        wp_register_script('pinesdscript-smooth-scroll', get_template_directory_uri() . '/src/js/ScrollMagic.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('pinesdscript-smooth-scroll'); // Enqueue it!
+        wp_register_script('gsap', get_template_directory_uri() . '/src/js/gsap.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('gsap'); // Enqueue it!
+        wp_register_script('gsap-animation', get_template_directory_uri() . '/src/js/animation.gsap.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('gsap-animation'); // Enqueue it!
+        wp_register_script('indicators', get_template_directory_uri() . '/src/js/debug.addIndicators.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('indicators'); // Enqueue it!
         wp_register_script('pinesdscript', get_template_directory_uri() . '/src/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_localize_script('pinesdscript', 'the_ajax_script', array('ajaxurl' =>admin_url('admin-ajax.php')));
         wp_enqueue_script('pinesdscript'); // Enqueue it!

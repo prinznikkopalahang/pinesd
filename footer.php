@@ -1,5 +1,5 @@
 <!-- footer -->
-<footer class="footer" role="contentinfo">
+<footer class="footer" role="contentinfo" id="footer">
   <div class="container">
     <div class="copy">
       <h3>LET’S FIND YOUR <br> NEXT BIG OPPORTUNITY</h3>

@@ -313,10 +313,12 @@ header nav ul li {
 
 header nav ul li.current-menu-item:before {
 	content: "";
-	width: 100%;
+	width: calc(100% - 40px);
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 	height: 11px;
 	background: #FFF200;
 }
@@ -378,7 +380,7 @@ header nav ul li a:hover {
 	width: 77vw;
 	height: 100vh;
 	background: #FFF200;
-	z-index: 1000;
+	z-index: 9999;
 	top: 0;
 	right: -77vw;
 	-webkit-transition: right ease-in-out 0.3s;
@@ -1437,24 +1439,18 @@ section.highlight .slides {
 
 section.highlight .slides .wrapper {
 	position: relative;
-	-webkit-transition: top ease-in-out 0.3s;
-	transition: top ease-in-out 0.3s;
 }
 
-section.highlight .slides .wrapper.one {
-	top: 0px;
+section.highlight .slides .wrapper#slideContainer {
+	width: 400%;
+	/* to contain 4 panels, each with 100% of window width */
+	height: 100%;
 }
 
-section.highlight .slides .wrapper.two {
-	top: -250px;
-}
-
-section.highlight .slides .wrapper.three {
-	top: -500px;
-}
-
-section.highlight .slides .wrapper.four {
-	top: -750px;
+section.highlight .slides .wrapper .slide {
+	width: 25%;
+	/* relative to parent -> 25% of 400% = 100% of window width */
+	float: left;
 }
 
 @media (max-width: 768px) {

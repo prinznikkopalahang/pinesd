@@ -147,44 +147,44 @@
 					// console.log(enableScroll);
 				}
 			});
-		$(window).bind('mousewheel DOMMouseScroll', function(event){
-			if ($('body.home').length > 0){
-				if(scrollHighlights){
-					$("body").addClass("disabled");
-					var stepAnimation = 'in';
-					if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-						step = step - 1;
-						stepAnimation = 'out';
-						console.log(step + ' up');
-					} else {
-						step = step + 1;
-						stepAnimation = 'in';
-					}
-
-					if(step < 1){
-						$("body").removeClass("disabled");
-						scrollHighlights = false;
-						step = 0;
-					} else {
-							$("body").addClass("disabled");
-							if(step <= 30){
-								$('.slides .wrapper').removeClass('one two three four').addClass('one');
-							} else if(step >= 30 && step <= 60){
-								$('.slides .wrapper').removeClass('one two three four').addClass('two');
-							} else if(step >= 60 &&  step <= 90){
-								$('.slides .wrapper').removeClass('one two three four').addClass('three');
-							} else if(step >= 90 && step <= 120){
-								$('.slides .wrapper').removeClass('one two three four').addClass('four');
-							} else if(step > 120){
-								$("body").removeClass("disabled");
-								scrollHighlights = false;
-								step = 120;
-							}
-
-					}
-				}
-			}
-		});
+		// $(window).bind('mousewheel DOMMouseScroll', function(event){
+		// 	if ($('body.home').length > 0){
+		// 		if(scrollHighlights){
+		// 			//$("body").addClass("disabled");
+		// 			var stepAnimation = 'in';
+		// 			if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+		// 				step = step - 1;
+		// 				stepAnimation = 'out';
+		// 				console.log(step + ' up');
+		// 			} else {
+		// 				step = step + 1;
+		// 				stepAnimation = 'in';
+		// 			}
+		//
+		// 			if(step < 1){
+		// 				$("body").removeClass("disabled");
+		// 				scrollHighlights = false;
+		// 				step = 0;
+		// 			} else {
+		// 					$("body").addClass("disabled");
+		// 					if(step <= 30){
+		// 						$('.slides .wrapper').removeClass('one two three four').addClass('one');
+		// 					} else if(step >= 30 && step <= 60){
+		// 						$('.slides .wrapper').removeClass('one two three four').addClass('two');
+		// 					} else if(step >= 60 &&  step <= 90){
+		// 						$('.slides .wrapper').removeClass('one two three four').addClass('three');
+		// 					} else if(step >= 90 && step <= 120){
+		// 						$('.slides .wrapper').removeClass('one two three four').addClass('four');
+		// 					} else if(step > 120){
+		// 						$("body").removeClass("disabled");
+		// 						scrollHighlights = false;
+		// 						step = 120;
+		// 					}
+		//
+		// 			}
+		// 		}
+		// 	}
+		// });
 		$(window).click(function() {
 			$('.search .wrapper').removeClass('wider');
 			$('.search .results').removeClass('show');
@@ -196,6 +196,47 @@
 		$( "#search-term" ).keyup(function() {
 			   searchPost($(this).val());
 		});
+		$(document).on('click', 'nav li.contact-footer a', function(event){
+			event.preventDefault();
+			console.log('Clicked Contact Us');
+			if (this.hash !== "") {
+				var hash = this.hash;
+				$('html, body').animate({
+        	scrollTop: $(hash).offset().top
+      	}, 800, function(){
+        	window.location.hash = hash;
+      	});
+				$('.mobile-nav').toggleClass('open');
+				$("body").toggleClass("disableScroll");
+			}
+		});
+
+		var controller = new ScrollMagic.Controller();
+		// define movement of panels
+		var wipeAnimation = new TimelineMax()
+			// animate to second panel
+			.to("#slideContainer", 0.5, {z: -150})		// move back in 3D space
+			.to("#slideContainer", 1,   {x: "-25%"})	// move in to first panel
+			.to("#slideContainer", 0.5, {z: 0})				// move back to origin in 3D space
+			// animate to third panel
+			.to("#slideContainer", 0.5, {z: -150, delay: 1})
+			.to("#slideContainer", 1,   {x: "-50%"})
+			.to("#slideContainer", 0.5, {z: 0})
+			// animate to forth panel
+			.to("#slideContainer", 0.5, {z: -150, delay: 1})
+			.to("#slideContainer", 1,   {x: "-75%"})
+			.to("#slideContainer", 0.5, {z: 0});
+
+			// create scene to pin and link animation
+			new ScrollMagic.Scene({
+					triggerElement: "#pinContainer",
+					triggerHook: "onLeave",
+					duration: "500%"
+				})
+				.setPin("#pinContainer")
+				.setTween(wipeAnimation)
+				//.addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
 
   });
 

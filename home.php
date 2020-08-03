@@ -49,11 +49,11 @@
           <div class="col"></div>
         </div>
       </section>
-      <section class="content highlight">
+      <section class="content highlight" id="pinContainer">
         <div class="container">
           <h3>WE'LL FIND YOUR OPPORTUNITY</h3>
           <div class="slides">
-            <div class="wrapper">
+            <div class="wrapper" id="slideContainer">
               <?php
                 if (isset($meta['opportunity'][0])) {
                   echo $meta['opportunity'][0];

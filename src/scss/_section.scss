@@ -322,20 +322,26 @@ section{
       }
       .wrapper{
         position: relative;
-        transition: top ease-in-out 0.3s;
-        &.one{
-          top: 0px;
+        //transition: top ease-in-out 0.3s;
+        &#slideContainer {
+          width: 400%; /* to contain 4 panels, each with 100% of window width */
+          height: 100%;
         }
-        &.two{
-          top: -250px;
-        }
-        &.three{
-          top: -500px;
-        }
-        &.four{
-          top: -750px;
-        }
+        // &.one{
+        //   top: 0px;
+        // }
+        // &.two{
+        //   top: -250px;
+        // }
+        // &.three{
+        //   top: -500px;
+        // }
+        // &.four{
+        //   top: -750px;
+        // }
         .slide{
+          width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */
+          float: left;
           @media(max-width: $sm){
               margin-top: 20px;
           }

@@ -850,6 +850,7 @@ section.banner .headline .container h1 {
 	color: #fff;
 	line-height: 90px !important;
 	margin-top: -35px;
+	width: 75%;
 }
 
 @media (max-width: 768px) {

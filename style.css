@@ -856,7 +856,7 @@ section.banner .headline .container h1 {
 @media (max-width: 768px) {
 	section.banner .headline .container h1 {
 		font-size: 65px;
-		line-height: 57px;
+		line-height: 57px  !important;
 	}
 }
 
@@ -941,7 +941,7 @@ section.banner.work .container h1 {
 		width: 100%;
 		font-weight: 300;
 		font-size: 42px;
-		line-height: 49px;
+		line-height: 49px  !important;
 		letter-spacing: -1px;
 	}
 }
@@ -977,7 +977,7 @@ body.team section.banner .headline .container h1 {
 	body.team section.banner .headline .container h1 {
 		width: 100%;
 		font-size: 60px;
-		line-height: 50px;
+		line-height: 50px  !important;
 	}
 }
 
@@ -1019,7 +1019,7 @@ body.pine-labs section.banner .headline h1 {
 @media (max-width: 768px) {
 	body.pine-labs section.banner .headline h1 {
 		width: 100%;
-		line-height: 55px;
+		line-height: 55px !important;
 		word-break: break-word;
 	}
 }

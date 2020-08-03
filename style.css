@@ -848,7 +848,7 @@ section.banner .headline .container {
 section.banner .headline .container h1 {
 	font-size: 110px;
 	color: #fff;
-	line-height: 80px;
+	line-height: 90px !important;
 	margin-top: -35px;
 }
 

@@ -954,12 +954,12 @@ section.banner.work .container h1 {
 }
 
 body.work section.banner h1 {
-	width: 54%;
+	width: 54% !important;
 }
 
 @media (max-width: 768px) {
 	body.work section.banner h1 {
-		width: 100%;
+		width: 100% !important;
 		word-break: break-word;
 	}
 }

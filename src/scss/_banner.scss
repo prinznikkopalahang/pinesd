@@ -124,7 +124,7 @@ section{
           width: 626px;
           font-family: "HelveticaNeueLTPro-Bd";
           font-size: 62px;
-          line-height: 70px;
+          line-height: 70px !important;
           margin-top: 50px;
           @media(max-width: $sm){
             width: 100%;

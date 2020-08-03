@@ -1276,6 +1276,7 @@ section.content.clients .container span {
 	width: 174px;
 	height: 180px;
 	background-size: contain !important;
+	background-repeat: no-repeat !important;
 }
 
 @media (max-width: 768px) {

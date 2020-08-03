@@ -340,6 +340,13 @@
           </div>
         </section>
       <?php endif; ?>
+      <?php if (isset($meta['inquiries-headline'][0])): ?>
+        <section class="intro headline">
+          <div class="container">
+            <h3><?php echo $meta['inquiries-headline'][0];?></h3>
+          </div>
+        </section>
+      <?php endif; ?>
       <?php if (isset($meta['inquiries'][0])): ?>
         <section class="intro inquiries">
           <div class="container">

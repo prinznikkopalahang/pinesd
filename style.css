@@ -24,6 +24,7 @@ Tags: SASS, clean
 .. 08. Sections
 .. 08. Buttons
 .. 08. Single Post
+.. 09. Tags
 */
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 /**
@@ -235,6 +236,16 @@ body.disabled {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
+}
+
+.mobile {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.mobile {
+		display: block;
+	}
 }
 
 /* -----------------------------------------
@@ -499,6 +510,7 @@ footer .copy {
 footer .copy h3 {
 	font-size: 30px;
 	margin-bottom: 40px;
+	font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -551,6 +563,7 @@ footer .contact-info .item b, footer .contact-info .item span {
 footer .contact-info .item b {
 	color: #FFF200;
 	padding-right: 10px;
+	font-weight: 500;
 }
 
 footer .contact-info .item .hover {
@@ -924,9 +937,11 @@ section.banner.work .container h1 {
 
 @media (max-width: 768px) {
 	section.banner.work .container h1 {
-		width: 90%;
-		font-size: 33px;
+		width: 100%;
+		font-weight: 300;
+		font-size: 42px;
 		line-height: 49px;
+		letter-spacing: -1px;
 	}
 }
 
@@ -1115,6 +1130,7 @@ section.intro .container .col.label {
 	display: -ms-flexbox;
 	display: flex;
 	padding-top: 10px;
+	width: 350px;
 }
 
 @media (max-width: 768px) {
@@ -1158,6 +1174,16 @@ section.intro.inquiries .container .content h4 {
 	font-size: 28px;
 	line-height: 30px;
 	margin-bottom: 20px;
+}
+
+section.intro.headline {
+	padding: 200px 0px 0px;
+}
+
+section.intro.headline h3 {
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
 }
 
 section.content {
@@ -1303,7 +1329,7 @@ section.content.approach {
 
 section.content.approach p {
 	font-size: 18px;
-	line-height: 30px;
+	line-height: 22px;
 	width: 621px;
 	margin-top: 30px;
 }
@@ -1410,7 +1436,7 @@ section.content.approach .items .item p {
 @media (max-width: 768px) {
 	section.content.approach .items .item p {
 		font-size: 20px;
-		line-height: 30px;
+		line-height: 22px;
 	}
 }
 
@@ -1451,11 +1477,21 @@ section.highlight .slides .wrapper .slide {
 	width: 25%;
 	/* relative to parent -> 25% of 400% = 100% of window width */
 	float: left;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
 	section.highlight .slides .wrapper .slide {
 		margin-top: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	section.highlight .slides .wrapper .slide p {
+		padding: 0px 20px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 }
 
@@ -1599,10 +1635,22 @@ section.dictionary .term i {
 	margin: 0px 10px;
 }
 
+@media (max-width: 768px) {
+	section.pine-process {
+		margin-top: 100px;
+	}
+}
+
 section.pine-process h3 {
 	font-size: 30px;
 	line-height: 30px;
 	margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+	section.pine-process h3 {
+		margin-bottom: 50px;
+	}
 }
 
 section.pine-process .steps {
@@ -1694,6 +1742,12 @@ section.pine-process .steps .step:nth-child(1) {
 	opacity: 1;
 }
 
+@media (max-width: 768px) {
+	section.pine-process .steps .step:nth-child(1).active.in::before {
+		background: #FFF200;
+	}
+}
+
 section.pine-process .steps .step:last-child {
 	margin-right: 0px;
 }
@@ -1764,6 +1818,12 @@ section.pine-process.work {
 	z-index: 1;
 }
 
+@media (max-width: 768px) {
+	section.pine-process.work {
+		margin-top: 0px !important;
+	}
+}
+
 section.pine-process.work .steps .step {
 	background: #fff;
 	font-size: 15px;
@@ -1771,9 +1831,35 @@ section.pine-process.work .steps .step {
 }
 
 @media (max-width: 768px) {
+	section.pine-process.work .steps .step h4 {
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: 500;
+	}
+}
+
+@media (max-width: 768px) {
+	section.pine-process.work .steps .step p {
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 300;
+	}
+}
+
+@media (max-width: 768px) {
 	section.pine-process.work .steps .step {
 		min-height: auto;
 		padding: 30px 0px 0px !important;
+	}
+}
+
+section.pine-process.work .steps .step:nth-child(1).active {
+	padding-top: 50px !important;
+}
+
+@media (max-width: 768px) {
+	section.pine-process.work .steps .step:nth-child(1).active.in::before {
+		background: #FFF200;
 	}
 }
 
@@ -2123,6 +2209,12 @@ section.conclusion .content p {
 	font-weight: 300;
 }
 
+@media (max-width: 768px) {
+	section.pinesd-posts .container {
+		width: 100%;
+	}
+}
+
 section.pinesd-posts .section-header {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2144,11 +2236,25 @@ section.pinesd-posts .section-header div h3 {
 	font-size: 30px;
 }
 
+section.pinesd-posts .section-header .title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
 section.pinesd-posts .section-header .search {
 	margin-left: auto;
 	position: relative;
 	height: 52px;
-	margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+	section.pinesd-posts .section-header .search {
+		margin-top: 50px;
+	}
 }
 
 section.pinesd-posts .section-header .search .wrapper {
@@ -2709,10 +2815,6 @@ button.btn.right, a.btn.right {
 	float: right;
 }
 
-#main.single section .container {
-	width: 900px;
-}
-
 @media (max-width: 768px) {
 	#main.single section .container {
 		width: 90%;
@@ -2722,30 +2824,49 @@ button.btn.right, a.btn.right {
 }
 
 #main.single section.banner {
-	height: 700px;
+	height: 500px;
+	background-size: cover !important;
+	background-position: top center !important;
 }
 
 #main.single section.banner h1 {
-	width: 100%;
+	width: 50%;
+	font-size: 62px;
+	line-height: 70px;
+	letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+	#main.single section.banner h1 {
+		font-size: 42px;
+		line-height: 49px;
+		width: 100%;
+	}
 }
 
 #main.single section.post-wrapper {
-	margin-top: -300px;
+	margin-top: 0px;
 	position: relative;
 	z-index: 1;
 }
 
 #main.single section.post-wrapper .container {
 	padding: 50px;
-	border-top: 10px solid #FFF200;
+	border-top: 20px solid #FFF200;
 	background: #fff;
-	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	width: 625px;
+	padding: 100px 0px 50px;
+}
+
+@media (max-width: 768px) {
+	#main.single section.post-wrapper .container {
+		width: 90%;
+	}
 }
 
 #main.single section.post-wrapper .container span.author {
 	font-size: 18px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	display: block;
 }
 
@@ -2760,7 +2881,114 @@ button.btn.right, a.btn.right {
 
 #main.single section.post-wrapper .container p a {
 	background: #FFF200;
-	padding: 5px 10px;
+	padding: 0px;
 	text-decoration: none;
 	color: #000;
+}
+
+#main.single section.post-wrapper .tags {
+	background: rgba(0, 0, 0, 0.05);
+	padding: 30px;
+	margin-top: 100px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	#main.single section.post-wrapper .tags {
+		display: block;
+	}
+}
+
+#main.single section.post-wrapper .tags h4 {
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+
+#main.single section.post-wrapper .tags .list {
+	width: 80%;
+	overflow: auto;
+}
+
+@media (max-width: 768px) {
+	#main.single section.post-wrapper .tags .list {
+		width: 100%;
+	}
+}
+
+#main.single section.post-wrapper .tags .list span {
+	background: #FFF200;
+	display: block;
+	float: left;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 900;
+	margin: 5px 20px 5px 0px;
+}
+
+#main.single section.post-wrapper .tags .list span a {
+	color: #000;
+	text-decoration: none;
+}
+
+#main.single section.post-wrapper .tags .social-share {
+	overflow: auto;
+}
+
+@media (max-width: 768px) {
+	#main.single section.post-wrapper .tags .social-share {
+		margin-top: 50px;
+	}
+}
+
+#main.single section.post-wrapper .tags .social-share a.social-icon {
+	display: block;
+	width: 36px;
+	height: 36px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #fff;
+	background: #333;
+	font-size: 30px;
+	float: left;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+	#main.tag section .container {
+		width: 90%;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+#main.tag section.banner {
+	height: 500px;
+	background-size: cover !important;
+	background-position: top center !important;
+}
+
+#main.tag section.banner h1 {
+	width: 50%;
+	font-size: 62px;
+	line-height: 70px;
+	letter-spacing: -1px;
+}
+
+#main.tag section.pinesd-posts {
+	margin-top: 100px;
+	position: relative;
+	z-index: 1000;
 }

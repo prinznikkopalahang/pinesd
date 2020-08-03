@@ -15,6 +15,7 @@ footer{
     h3{
       font-size: 30px;
       margin-bottom: 40px;
+      font-weight: 500;
       @media(max-width: $sm){
         font-size: 26px;
       }
@@ -52,6 +53,7 @@ footer{
         b{
           color: $pinesdPrimary;
           padding-right: 10px;
+          font-weight: 500;
         }
         .hover{
           position: absolute;

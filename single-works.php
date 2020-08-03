@@ -72,11 +72,15 @@
         <?php endif; ?>
 
         <?php if (isset(get_post_meta( $post->ID, '_post_conclusion')[0])): ?>
-        <section class="conclusion">
+        <section class="intro">
           <div class="container">
-            <div class="content">
+            <div class="col label">
+              
+            </div>
+            <div class="col content">
               <?php echo wpautop(get_post_meta( $post->ID, '_post_conclusion')[0], true);?>
             </div>
+            <div class="col"></div>
           </div>
         </section>
         <?php endif; ?>

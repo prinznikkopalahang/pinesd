@@ -44,3 +44,10 @@ body{
     }
   }
 }
+
+.mobile{
+  display: none;
+  @media(max-width: $sm){
+    display: block;
+  }
+}

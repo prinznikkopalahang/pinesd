@@ -10,7 +10,7 @@
         <div class="headline">
           <div class="container">
             <div class="breadcrumbs">
-              <span class="parent"><a href="<?php echo get_site_url() . '/pine-sense'; ?>">Pine Sense</a></span>
+              <span class="parent"><a href="<?php echo get_site_url() . '/pine-sense'; ?>">RECENT POSTS</a></span>
             </div>
             <h1><?php echo the_title();?></h1>
           </div>
@@ -24,7 +24,28 @@
                   <span class="author">Posted <?php the_date(); ?> by <b><?php the_author(); ?></b></div>
                   <?php the_content();?>
                   <?php edit_post_link(); ?>
-
+                  <div class="tags">
+                    <div class="list">
+                      <h4>TAGS</h4>
+                      <?php
+                        $posttags = get_the_tags();
+                        if ($posttags) {
+                          foreach($posttags as $tag) {
+                            echo '<span class="tag"> <a href="' . get_tag_link($tag->term_id) . '">'. $tag->name . '</a></span>';
+                          }
+                        }
+                        ?>
+                    </div>
+                    <div class="social-share">
+                      <h4>SHARE</h4>
+                      <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink();?>" target="_blank" class="social-icon">
+                          <i class="fa fa-linkedin"></i>
+                      </a>
+                      <a href="https://twitter.com/share?url=<?php the_permalink();?>&amp;text=<?php the_title();?>" target="_blank" class="social-icon">
+                         <i class="fa fa-twitter"></i>
+                     </a>
+                    </div>
+                  </div>
                 </div>
                 <!-- /article -->
               </div>

@@ -1,0 +1,29 @@
+#main{
+  &.tag{
+    section{
+      .container{
+        //width: 900px;
+        @media (max-width: $sm){
+          width: 90%;
+          box-sizing: border-box;
+        }
+      }
+      &.banner{
+        height: 500px;
+        background-size: cover !important;
+        background-position: top center !important;
+        h1{
+          width: 50%;
+          font-size: 62px;
+          line-height: 70px;
+          letter-spacing: -1px;
+        }
+      }
+      &.pinesd-posts{
+        margin-top: 100px;
+        position: relative;
+        z-index: 1000;
+      }
+    }
+  }
+}

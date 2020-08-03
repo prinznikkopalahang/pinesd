@@ -2,31 +2,45 @@
   &.single{
     section{
       .container{
-        width: 900px;
+        //width: 900px;
         @media (max-width: $sm){
           width: 90%;
           box-sizing: border-box;
         }
       }
       &.banner{
-        height: 700px;
+        height: 500px;
+        background-size: cover !important;
+        background-position: top center !important;
         h1{
-          width: 100%;
+          width: 50%;
+          font-size: 62px;
+          line-height: 70px;
+          letter-spacing: -1px;
+          @media(max-width: $sm){
+            font-size: 42px;
+            line-height: 49px;
+            width: 100%;
+          }
         }
       }
       &.post-wrapper{
-        margin-top: -300px;
+        margin-top: 0px;
         position: relative;
         z-index: 1;
         .container{
           padding: 50px;
-          border-top: 10px solid $pinesdPrimary;
+          border-top: 20px solid $pinesdPrimary;
           background: #fff;
-          box-shadow: 0px 0px 10px rgba($pinesdSecondary, 0.2);
+          width: 625px;
+          padding: 100px 0px 50px;
+          @media(max-width: $sm){
+            width: 90%;
+          }
           span{
             &.author{
               font-size: 18px;
-              margin-bottom: 20px;
+              margin-bottom: 50px;
               display: block;
             }
           }
@@ -38,9 +52,67 @@
             line-height: 32px;
             a{
               background: $pinesdPrimary;
-              padding: 5px 10px;
+              padding: 0px;
               text-decoration: none;
               color: $pinesdSecondary;
+            }
+          }
+        }
+        .tags{
+          background: $pinesdTertiary;
+          padding: 30px;
+          margin-top: 100px;
+          display: flex;
+          @media(max-width: $sm){
+            display: block;
+          }
+          h4{
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+          }
+          .list{
+            width: 80%;
+            @media(max-width: $sm){
+              width: 100%;
+            }
+            overflow: auto;
+            span{
+              background: $pinesdPrimary;
+              display: block;
+              float: left;
+              font-size: 18px;
+              line-height: 30px;
+              font-weight: 900;
+              margin:5px 20px 5px 0px;
+              a{
+                color: $pinesdSecondary;
+                text-decoration: none;
+              }
+            }
+          }
+          .social-share{
+            overflow: auto;
+            @media(max-width: $sm){
+              margin-top: 50px;
+            }
+            a{
+              &.social-icon{
+                  display: block;
+                  width: 36px;
+                  height: 36px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration: none;
+                  color: #fff;
+                  background: $pinesdQuaternary;
+                  font-size: 30px;
+                  float: left;
+                  border-radius: 5px;
+                  margin-right: 5px;
+              }
             }
           }
         }

@@ -23,6 +23,7 @@ Tags: SASS, clean
 .. 08. Sections
 .. 08. Buttons
 .. 08. Single Post
+.. 09. Tags
 */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import 'src/scss/_reset';
@@ -35,3 +36,4 @@ Tags: SASS, clean
 @import 'src/scss/_section';
 @import 'src/scss/_buttons';
 @import 'src/scss/_single';
+@import 'src/scss/_tag';

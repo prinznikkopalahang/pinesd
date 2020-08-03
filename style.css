@@ -953,6 +953,10 @@ section.banner.work .container h1 {
 	}
 }
 
+body.work section.banner h1 {
+	width: 54%;
+}
+
 @media (max-width: 768px) {
 	body.work section.banner h1 {
 		width: 100%;

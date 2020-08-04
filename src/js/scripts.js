@@ -58,14 +58,14 @@
 					$('.step:nth-child(2)').css('opacity', '1');
 					$('.step:nth-child(2)').addClass('active');
 					$('.step:nth-child(2)').addClass('in');
-				}, 1000);
+				}, 1300);
 				setTimeout(function(){
 					$('.step').removeClass('active');
 					$('.step').removeClass('in');
 					$('.step:nth-child(3)').css('opacity', '1');
 					$('.step:nth-child(3)').addClass('active');
 					$('.step:nth-child(3)').addClass('in');
-				}, 1500);
+				}, 2100);
 				setTimeout(function(){
 					$('.step').removeClass('active');
 					$('.step').removeClass('in');
@@ -74,7 +74,7 @@
 					$('.step:nth-child(4)').addClass('in');
 					$("body").removeClass("disabled");
 					stepsDisplayed = true;
-				}, 2000);
+				}, 2900);
 			}
 
 		}
@@ -105,7 +105,7 @@
 					}
 				} else if ($('body.single-works').length > 0){
 					var scroll = $(window).scrollTop();
-					var pineProcess = $(".pine-process").offset().top - 900;
+					var pineProcess = $(".pine-process").offset().top - 600;
 					var width = $(window).width();
 					if (scroll >= pineProcess && scroll <= (pineProcess + $(".pine-process").height()) && width > 768 ) {
 							// enableScroll = false;

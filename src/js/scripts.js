@@ -44,7 +44,6 @@
 
 			if(!stepsDisplayed){
 				setTimeout(function(){
-					$("body").addClass("disabled");
 					$('.step').removeClass('active');
 					$('.step').removeClass('in');
 					$('.step:nth-child(1)').css('opacity', '1');
@@ -72,7 +71,6 @@
 					$('.step:nth-child(4)').css('opacity', '1');
 					$('.step:nth-child(4)').addClass('active');
 					$('.step:nth-child(4)').addClass('in');
-					$("body").removeClass("disabled");
 					stepsDisplayed = true;
 				}, 2900);
 			}

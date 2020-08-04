@@ -11,6 +11,8 @@ section{
     }
     &.idea{
       background: $pinesdPrimary;
+      position: relative;
+      z-index: 1000;
       .container{
         .col{
           &.content{

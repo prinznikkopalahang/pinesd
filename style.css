@@ -1047,6 +1047,8 @@ section.intro {
 
 section.intro.idea {
 	background: #FFF200;
+	position: relative;
+	z-index: 1000;
 }
 
 section.intro.idea .container .col.content {

@@ -1736,6 +1736,12 @@ section.pine-process .steps .step::before {
 
 section.pine-process .steps .step.active.in::before {
 	background: #FFF200;
+	-webkit-animation-name: step-in;
+	animation-name: step-in;
+	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	left: 0px;
 	top: 0px;
 	right: auto;

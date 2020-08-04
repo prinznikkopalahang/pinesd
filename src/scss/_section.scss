@@ -540,9 +540,9 @@ section{
           &.in{
             &::before{
               background: $pinesdPrimary;
-              // animation-name: step-in;
-              // animation-duration: 0.4s;
-              // animation-fill-mode: forwards;
+              animation-name: step-in;
+              animation-duration: 0.4s;
+              animation-fill-mode: forwards;
               left: 0px;
               top: 0px;
               right: auto;

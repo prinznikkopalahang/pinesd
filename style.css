@@ -1191,6 +1191,12 @@ section.intro.inquiries .container .content h4 {
 	margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+	section.intro.inquiries .container .content h4 {
+		font-weight: 300;
+	}
+}
+
 section.intro.headline {
 	padding: 200px 0px 0px;
 }
@@ -1441,6 +1447,7 @@ section.content.approach .items .item h4 {
 	section.content.approach .items .item h4 {
 		font-size: 30px;
 		width: 100%;
+		font-weight: 300;
 	}
 }
 
@@ -1783,6 +1790,7 @@ section.pine-process .steps .step h4 {
 	color: #000;
 	margin-bottom: 25px;
 	width: 100%;
+	font-weight: 300;
 }
 
 section.pine-process .steps .step p {
@@ -1858,7 +1866,7 @@ section.pine-process.work .steps .step {
 	section.pine-process.work .steps .step h4 {
 		font-size: 30px;
 		line-height: 36px;
-		font-weight: 500;
+		font-weight: 300;
 	}
 }
 
@@ -1988,6 +1996,12 @@ section.works .container .intro .col.content h4 {
 	font-size: 22px;
 	margin-bottom: 25px;
 	font-family: "HelveticaNeueLTPro-Bd";
+}
+
+@media (max-width: 768px) {
+	section.works .container .intro .col.content h4 {
+		font-weight: 300;
+	}
 }
 
 section.works .container .intro .col.content h2 {
@@ -2521,6 +2535,12 @@ section.pinesd-posts .posts .post .content .copy h4 {
 	margin-bottom: 15px;
 }
 
+@media (max-width: 768px) {
+	section.pinesd-posts .posts .post .content .copy h4 {
+		font-weight: 300;
+	}
+}
+
 section.pinesd-posts .posts .post .content .copy .info {
 	margin-bottom: 20px;
 }
@@ -2654,6 +2674,12 @@ body.team section.main-content .wp-block-columns .wp-block-column h4 {
 	font-weight: bold;
 	font-size: 24px;
 	margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+	body.team section.main-content .wp-block-columns .wp-block-column h4 {
+		font-weight: 300;
+	}
 }
 
 body.team section.main-content .wp-block-columns .wp-block-column p {

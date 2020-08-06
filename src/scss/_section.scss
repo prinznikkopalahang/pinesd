@@ -123,6 +123,9 @@ section{
             font-size: 28px;
             line-height: 30px;
             margin-bottom: 20px;
+            @media(max-width: $sm){
+              font-weight: 300;
+            }
           }
         }
       }
@@ -306,6 +309,7 @@ section{
             @media(max-width: $sm){
               font-size: 30px;
               width: 100%;
+              font-weight: 300;
             }
           }
           p{
@@ -587,6 +591,7 @@ section{
           color: $pinesdSecondary;
           margin-bottom: 25px;
           width: 100%;
+          font-weight: 300;
         }
         p{
           font-size: 15px;
@@ -647,7 +652,7 @@ section{
             @media(max-width: $sm){
               font-size: 30px;
               line-height: 36px;
-              font-weight: 500;
+              font-weight: 300;
             }
           }
           p{
@@ -761,6 +766,9 @@ section{
               font-size: 22px;
               margin-bottom: 25px;
               font-family: "HelveticaNeueLTPro-Bd";
+              @media(max-width: $sm){
+                font-weight: 300;
+              }
             }
             h2{
               font-family: "HelveticaNeueLTPro-Bd";
@@ -1111,6 +1119,9 @@ section{
               font-size: 24px;
               font-family: "HelveticaNeueLTPro-Bd";
               margin-bottom: 15px;
+              @media(max-width: $sm){
+                font-weight: 300;
+              }
             }
             .info{
               margin-bottom: 20px;
@@ -1218,6 +1229,9 @@ body{
               font-weight: bold;
               font-size: 24px;
               margin-bottom: 20px;
+              @media(max-width: $sm){
+                font-weight: 300;
+              }
             }
             p{
               font-size: 15px;

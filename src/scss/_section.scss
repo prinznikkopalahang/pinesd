@@ -12,7 +12,7 @@ section{
     &.idea{
       background: $pinesdPrimary;
       position: relative;
-      z-index: 1000;
+      z-index: 900;
       .container{
         .col{
           &.content{
@@ -454,7 +454,7 @@ section{
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: 1;
     }
     .term{
       width: 626px;
@@ -480,6 +480,10 @@ section{
       i{
         margin:0px 10px;
       }
+    }
+    .container{
+      position: relative;
+      z-index: 1;
     }
   }
   &.pine-process{

@@ -1048,7 +1048,7 @@ section.intro {
 section.intro.idea {
 	background: #FFF200;
 	position: relative;
-	z-index: 1000;
+	z-index: 900;
 }
 
 section.intro.idea .container .col.content {
@@ -1619,7 +1619,7 @@ section.dictionary::before {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 1;
 }
 
 section.dictionary .term {
@@ -1658,6 +1658,11 @@ section.dictionary .term b {
 
 section.dictionary .term i {
 	margin: 0px 10px;
+}
+
+section.dictionary .container {
+	position: relative;
+	z-index: 1;
 }
 
 @media (max-width: 768px) {

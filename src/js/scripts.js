@@ -104,7 +104,7 @@
 					}
 				} else if ($('body.single-works').length > 0){
 					var scroll = $(window).scrollTop();
-					var pineProcess = $(".pine-process").offset().top - 600;
+					var pineProcess = $(".pine-process").offset().top - 900;
 					var width = $(window).width();
 					if (scroll >= pineProcess && scroll <= (pineProcess + $(".pine-process").height()) && width > 768 ) {
 							// enableScroll = false;

@@ -180,3 +180,24 @@ header{
     overflow: hidden;
   }
 }
+
+.single-works{
+  header{
+    ul{
+      li{
+        &:nth-child(2){
+          &:before{
+            content: "";
+            width: calc(100% - 40px);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 11px;
+            background: $pinesdPrimary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -486,6 +486,18 @@ header nav ul li a:hover {
 	}
 }
 
+.single-works header ul li:nth-child(2):before {
+	content: "";
+	width: calc(100% - 40px);
+	position: absolute;
+	top: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	height: 11px;
+	background: #FFF200;
+}
+
 /* -----------------------------------------
 	Footer Styling
 --------------------------------------------
@@ -1524,6 +1536,31 @@ section.highlight .slides .wrapper .slide p.copy.big {
 	margin: 0 auto;
 }
 
+section.highlight .navigation {
+	text-align: center;
+	position: absolute;
+	margin-top: 30px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+section.highlight .navigation span {
+	width: 12px;
+	height: 12px;
+	background: white;
+	display: block;
+	position: relative;
+	z-index: 1000;
+	float: left;
+	margin: 15px;
+	border-radius: 20px;
+}
+
+section.highlight .navigation span.active {
+	background: #000;
+}
+
 section.pine-sense {
 	overflow: auto;
 }
@@ -1891,7 +1928,7 @@ section.pine-process.work .steps .step {
 }
 
 section.pine-process.work .steps .step:nth-child(1).active {
-	padding-top: 50px !important;
+	padding-top: 66px !important;
 }
 
 @media (max-width: 768px) {
@@ -2211,6 +2248,7 @@ section.featured-work {
 	background: #fff;
 	position: relative;
 	z-index: 1;
+	overflow: auto;
 }
 
 @media (max-width: 768px) {
@@ -2220,7 +2258,15 @@ section.featured-work {
 }
 
 section.featured-work img {
-	width: 100%;
+	width: 50%;
+	float: left;
+}
+
+@media (max-width: 768px) {
+	section.featured-work img {
+		width: 100%;
+		float: none;
+	}
 }
 
 section.conclusion {
@@ -2935,6 +2981,11 @@ button.btn.right, a.btn.right {
 	padding: 0px;
 	text-decoration: none;
 	color: #000;
+}
+
+#main.single section.post-wrapper .container .wp-block-image figcaption {
+	font-size: 13px;
+	color: gray;
 }
 
 #main.single section.post-wrapper .tags {

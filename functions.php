@@ -191,7 +191,8 @@ function save_post_meta_boxes(){
     update_post_meta( $post->ID, "_post_engagement", $_POST[ "_post_engagement" ]);
     update_post_meta( $post->ID, "_post_outcome", $_POST[ "_post_outcome" ]);
     update_post_meta( $post->ID, "_post_services", $_POST[ "_post_services" ]);
-    update_post_meta( $post->ID, "_post_gallery", $_POST[ "_post_gallery" ]);
+    update_post_meta( $post->ID, "_post_gallery_1", $_POST[ "_post_gallery_1" ]);
+    update_post_meta( $post->ID, "_post_gallery_2", $_POST[ "_post_gallery_2" ]);
     update_post_meta( $post->ID, "_post_framework", $_POST[ "_post_framework" ]);
     update_post_meta( $post->ID, "_post_output", $_POST[ "_post_output" ]);
     update_post_meta( $post->ID, "_post_conclusion", $_POST[ "_post_conclusion" ]);
@@ -208,7 +209,8 @@ function show_custom_post_fields(){
     $engagement = $custom[ "_post_engagement" ][ 0 ];
     $outcome = $custom[ "_post_outcome" ][ 0 ];
     $services = $custom[ "_post_services" ][ 0 ];
-    $gallery = $custom[ "_post_gallery" ][ 0 ];
+    $gallery1 = $custom[ "_post_gallery_1" ][ 0 ];
+    $gallery2 = $custom[ "_post_gallery_2" ][ 0 ];
     $framework = $custom[ "_post_framework" ][ 0 ];
     $output = $custom[ "_post_output" ][ 0 ];
     $conclusion = $custom[ "_post_conclusion" ][ 0 ];
@@ -268,14 +270,20 @@ function show_custom_post_fields(){
             'textarea_name' => '_post_services',
         )
     );
-    $galleryHtml = '<div class="field-group">';
-      $galleryHtml .= '<label class="custom-label">Featured Work Image</label>';
-      $galleryHtml .= '<a href="#" class="pinesd_upload_image_button_gallery custom-btn">Upload Media</a>';
-      $galleryHtml .= '<img src="'.$gallery.'" class="banner-preview">';
-      $galleryHtml .= '<input class="field upload" type="hidden" id="post_gallery" name="_post_gallery" value="'.$gallery.'" />';
-    $galleryHtml .= '</div>';
-    echo $galleryHtml;
-
+    $galleryHtml1 = '<div class="field-group">';
+      $galleryHtml1 .= '<label class="custom-label">Featured Work Image 1</label>';
+      $galleryHtml1 .= '<a href="#" class="pinesd_upload_image_button_gallery_1 custom-btn">Upload Media</a>';
+      $galleryHtml1 .= '<img src="'.$gallery1.'" class="banner-preview-1">';
+      $galleryHtml1 .= '<input class="field upload" type="hidden" id="post_gallery_1" name="_post_gallery_1" value="'.$gallery1.'" />';
+    $galleryHtml1 .= '</div>';
+    $galleryHtml2 = '<div class="field-group">';
+      $galleryHtml2 .= '<label class="custom-label">Featured Work Image 2</label>';
+      $galleryHtml2 .= '<a href="#" class="pinesd_upload_image_button_gallery_2 custom-btn">Upload Media</a>';
+      $galleryHtml2 .= '<img src="'.$gallery2.'" class="banner-preview-2">';
+      $galleryHtml2 .= '<input class="field upload" type="hidden" id="post_gallery_2" name="_post_gallery_2" value="'.$gallery2.'" />';
+    $galleryHtml2 .= '</div>';
+    echo $galleryHtml1;
+    echo $galleryHtml2;
     $frameworkHtml = '<label class="custom-label">Framework</label>';
     echo $frameworkHtml;
     wp_editor(
@@ -383,6 +391,15 @@ function admin_css() {
   </style>';
 }
 
+
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-post-ancestor', $classes) || in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -398,4 +415,5 @@ add_action('admin_head', 'admin_css'); // Admin Field Styling
 add_action( 'admin_enqueue_scripts', 'pinesd_admin_script' );
 add_shortcode( 'display-posts', 'display_post_list_shortcode' ); // Custom Shortcode
 add_action('wp_ajax_nopriv_search_post_ajax', 'search_post_ajax');
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 //Shortcodes

@@ -57,6 +57,11 @@
               color: $pinesdSecondary;
             }
           }
+
+          .wp-block-image figcaption {
+              font-size: 13px;
+              color: gray;
+          }
         }
         .tags{
           background: $pinesdTertiary;

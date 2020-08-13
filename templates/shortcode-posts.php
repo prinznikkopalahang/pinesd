@@ -38,7 +38,7 @@
                 <span class="date"><?php the_date();?></span>
               </div>
               <?php
-                $content = substr(get_the_content(), 0, 205);
+                $content = substr(strip_tags(get_the_content()), 0, 205);
               ?>
               <p><?php echo $content;?> ...</p>
             </div>

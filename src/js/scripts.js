@@ -164,15 +164,33 @@
 			.to("#slideContainer", 0.5, {z: 0});
 
 			// create scene to pin and link animation
-			new ScrollMagic.Scene({
+			var scene = new ScrollMagic.Scene({
 					triggerElement: "#pinContainer",
 					triggerHook: "onLeave",
 					duration: "500%"
-				})
-				.setPin("#pinContainer")
+				});
+
+				scene.setPin("#pinContainer")
 				.setTween(wipeAnimation)
 				//.addIndicators() // add indicators (requires plugin)
-				.addTo(controller);
+				.addTo(controller)
+				.on("progress", function (e) {
+					console.log(e.progress);
+					if(e.progress < 0.2){
+						$('.navigation span').removeClass('active');
+						$('.navigation span:nth-child(1)').addClass('active');
+					} else if(e.progress > 0.2 && e.progress < 0.45) {
+						$('.navigation span').removeClass('active');
+						$('.navigation span:nth-child(2)').addClass('active');
+					} else if(e.progress > 0.45 && e.progress < 0.8) {
+						$('.navigation span').removeClass('active');
+						$('.navigation span:nth-child(3)').addClass('active');
+					} else if(e.progress > 0.8 && e.progress <= 1) {
+						$('.navigation span').removeClass('active');
+						$('.navigation span:nth-child(4)').addClass('active');
+					}
+				});
+
 
   });
 

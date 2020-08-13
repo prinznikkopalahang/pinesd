@@ -60,6 +60,12 @@
                 }
               ?>
             </div>
+            <div class="navigation">
+              <span class="item active"></span>
+              <span class="item"></span>
+              <span class="item"></span>
+              <span class="item"></span>
+            </div>
           </div>
         </div>
       </section>

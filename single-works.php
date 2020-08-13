@@ -38,7 +38,8 @@
       <?php endif; ?>
       <section class="featured-work">
         <div class="container">
-          <img src="<?php echo get_post_meta( $post->ID, '_post_gallery')[0];?>" alt="<?php echo get_post_meta( $post->ID, '_post_headline_title')[0];?>">
+          <img src="<?php echo get_post_meta( $post->ID, '_post_gallery_1')[0];?>" alt="<?php echo get_post_meta( $post->ID, '_post_headline_title')[0];?>">
+          <img src="<?php echo get_post_meta( $post->ID, '_post_gallery_2')[0];?>" alt="<?php echo get_post_meta( $post->ID, '_post_headline_title')[0];?>">
         </div>
       </section>
 
@@ -75,7 +76,7 @@
         <section class="intro">
           <div class="container">
             <div class="col label">
-              
+
             </div>
             <div class="col content">
               <?php echo wpautop(get_post_meta( $post->ID, '_post_conclusion')[0], true);?>

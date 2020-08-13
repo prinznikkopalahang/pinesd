@@ -379,6 +379,27 @@ section{
         }
       }
     }
+    .navigation {
+      text-align: center;
+      position: absolute;
+      margin-top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      span {
+        width: 12px;
+        height: 12px;
+        background: white;
+        display: block;
+        position: relative;
+        z-index: 1000;
+        float: left;
+        margin: 15px;
+        border-radius: 20px;
+        &.active{
+          background: #000;
+        }
+      }
+    }
   }
   &.pine-sense{
     overflow: auto;
@@ -675,7 +696,7 @@ section{
           }
           &:nth-child(1){
             &.active{
-              padding-top: 50px !important;
+              padding-top: 66px !important;
               &.in{
                 &::before{
                   @media(max-width: $sm){
@@ -925,11 +946,17 @@ section{
     background: #fff;
     position: relative;
     z-index: 1;
+    overflow: auto;
     @media(max-width: $sm){
       margin: 50px 0px 0px;
     }
     img{
-      width: 100%;
+      width: 50%;
+      float: left;
+      @media(max-width: $sm){
+        width: 100%;
+        float: none;
+      }
     }
   }
   &.conclusion{
